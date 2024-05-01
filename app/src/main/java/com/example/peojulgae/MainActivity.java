@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-//제이크가 제이크한테
+//제이크가 미누한테1
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
