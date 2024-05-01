@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 헤이2
+// 0923
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
