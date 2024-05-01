@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 민우에게 전송
+// 영원에게 전송
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
