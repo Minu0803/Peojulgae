@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 나 자신을 변경
+// 제이크한테 전송
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
