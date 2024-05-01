@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 1039 미누피전송
+//  미누피 1113
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
