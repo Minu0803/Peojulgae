@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 미누피에서 마스터로 전송
+// 미누피에서 마스터로 전송합니다
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
