@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 마스터한테 전송
+//제이크가 제이크한테
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
