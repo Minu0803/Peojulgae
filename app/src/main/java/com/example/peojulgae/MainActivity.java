@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 미누피피2
+// 마스터한테 전송
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
