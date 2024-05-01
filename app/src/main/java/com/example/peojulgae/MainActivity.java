@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 나 자신을 변경
+// 마스터 테스트
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
