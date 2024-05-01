@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 제이크 10/33
+//  제이크 마스터한테 한번만
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
