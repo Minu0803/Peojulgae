@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 미누피에서 스스로 1024
+// 미누피피3
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
