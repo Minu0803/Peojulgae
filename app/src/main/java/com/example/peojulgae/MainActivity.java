@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 미누피한테 파일 전송
+// 제이크가 마스터한테 0952
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
