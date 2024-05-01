@@ -9,7 +9,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-// 1053
+//  제이크 1059
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
