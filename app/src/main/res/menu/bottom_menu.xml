@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/fragment_home"
+        android:title="홈"
+        android:enabled="true"
+        android:icon="@drawable/home" />
+    <item
+        android:id="@+id/fragment_category"
+        android:title="카테고리"
+        android:enabled="true"
+        android:icon="@drawable/category" />
+    <item
+        android:id="@+id/fragment_mart"
+        android:title="마트"
+        android:enabled="true"
+        android:icon="@drawable/mart" />
+    <item
+        android:id="@+id/fragment_mypage"
+        android:title="마이페이지"
+        android:enabled="true"
+        android:icon="@drawable/mypage" />
+</menu>
