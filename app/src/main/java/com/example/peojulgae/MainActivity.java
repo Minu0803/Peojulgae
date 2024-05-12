@@ -1,17 +1,13 @@
 package com.example.peojulgae;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -21,7 +17,9 @@ import fragment.Frag1;
 import fragment.Frag2;
 import fragment.Frag3;
 import fragment.Frag4;
-public class MainActivity extends AppCompatActivity {
+import fragment.Frag5;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private BottomNavigationView bottomNavigationView;
     private FragmentManager fm;
@@ -32,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private Frag4 frag4;
 
 
+    Button btn01;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        btn01 = findViewById(R.id.GPSButton);
+        btn01.setOnClickListener(this);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_view);
         bottomNavigationView.setOnItemSelectedListener(menuItem -> {
@@ -52,12 +54,15 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.fragment_mypage) {
                 setFrag(3);
             }
+
             return false;
         });
         frag1 = new Frag1();
         frag2 = new Frag2();
         frag3 = new Frag3();
         frag4 = new Frag4();
+
+
         setFrag(0); // 첫 프래그먼트 화면 선택
 
     }
@@ -86,5 +91,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent01 = new Intent(MainActivity.this, MapActivity.class);
+        startActivity(intent01);
     }
 }

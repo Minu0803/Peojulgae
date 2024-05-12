@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment;
 import com.example.peojulgae.R;
 
 
-public class Frag4 extends Fragment {
+public class Frag4 extends Fragment{
     private View view;
 
     @Nullable
