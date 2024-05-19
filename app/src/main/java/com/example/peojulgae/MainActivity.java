@@ -18,6 +18,8 @@ import fragment.Frag2;
 import fragment.Frag3;
 import fragment.Frag4;
 
+//rice
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private BottomNavigationView bottomNavigationView;
