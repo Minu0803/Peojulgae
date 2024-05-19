@@ -17,7 +17,6 @@ import fragment.Frag1;
 import fragment.Frag2;
 import fragment.Frag3;
 import fragment.Frag4;
-import fragment.Frag5;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
