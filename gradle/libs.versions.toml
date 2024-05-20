@@ -9,6 +9,7 @@ appcompat = "1.6.1"
 material = "1.11.0"
 activity = "1.8.0"
 constraintlayout = "2.1.4"
+playServicesLocation = "21.1.0"
 v2All = "2.20.1"
 playServicesMaps = "18.2.0"
 playServices = "12.0.1"
@@ -23,6 +24,7 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
 play-services-maps-x1-0-0 = { module = "com.google.gms.play-services-maps:21.0.0" }
 v2-all = { module = "com.kakao.sdk:v2-all", version.ref = "v2All" }
 v2-cert = { module = "com.kakao.sdk:v2-cert", version.ref = "v2All" }
