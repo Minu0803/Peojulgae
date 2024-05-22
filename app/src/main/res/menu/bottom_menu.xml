@@ -5,7 +5,7 @@
         android:id="@+id/fragment_home"
         android:title="홈"
         android:enabled="true"
-        android:icon="@drawable/home" />
+        android:icon="@drawable/home2" />
     <item
         android:id="@+id/fragment_category"
         android:title="카테고리"
