@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "396489700848",
+    "firebase_url": "https://peojulgae-default-rtdb.firebaseio.com",
+    "project_id": "peojulgae",
+    "storage_bucket": "peojulgae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396489700848:android:213ecb1247c26344061935",
+        "android_client_info": {
+          "package_name": "com.example.peojulgae"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm_yfJTUn_xyvyb4Zij9ZzWMzAdHGG1Ck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
