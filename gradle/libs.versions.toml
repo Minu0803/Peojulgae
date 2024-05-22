@@ -13,6 +13,9 @@ playServicesLocation = "21.1.0"
 v2All = "2.20.1"
 playServicesMaps = "18.2.0"
 playServices = "12.0.1"
+googleGmsGoogleServices = "4.4.1"
+firebaseAuth = "23.0.0"
+firebaseDatabase = "21.0.0"
 
 [libraries]
 android = { module = "com.kakao.maps.open:android", version.ref = "android" }
@@ -36,7 +39,10 @@ v2-user = { module = "com.kakao.sdk:v2-user", version.ref = "v2All" }
 x1-0-0 = { module = "com.google.gms.play-services-maps:21.0.0" }
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 play-services = { group = "com.google.android.gms", name = "play-services", version.ref = "playServices" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
+googleGmsGoogleServices = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 
