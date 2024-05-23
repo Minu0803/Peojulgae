@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,8 +25,8 @@ import fragment.Frag1;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText emailEditText, passwordEditText;
-    private Button loginButton, registerButton;
+    private EditText emailEditText, passwordEditText,signupEditText,forgotpasswordEditText;
+    private ImageView loginclick;
     private CheckBox autoLoginCheckBox;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
@@ -38,20 +39,20 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        emailEditText = findViewById(R.id.email_edittext);
-        passwordEditText = findViewById(R.id.password_edittext);
-        loginButton = findViewById(R.id.login_Button);
-        registerButton = findViewById(R.id.register_Button);
-        autoLoginCheckBox = findViewById(R.id.autoLogin_CheckBox);
+        emailEditText = findViewById(R.id.email_text);
+        passwordEditText = findViewById(R.id.password_text);
+        loginclick = findViewById(R.id.login_click);
+        signupEditText = findViewById(R.id.sign_up);
+        autoLoginCheckBox = findViewById(R.id.auto_login);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        loginclick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginUser();
             }
         });
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
+        signupEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText, confirmPasswordEditText, userIdEditText;
-    private Button registerButton;
+    private ImageView registerImageView;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
@@ -31,13 +32,13 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        emailEditText = findViewById(R.id.email_EditText);
-        passwordEditText = findViewById(R.id.password_EditText);
+        emailEditText = findViewById(R.id.join_email);
+        passwordEditText = findViewById(R.id.passward);
         confirmPasswordEditText = findViewById(R.id.confirmPassword_EditText);
-        userIdEditText = findViewById(R.id.userId_EditText);
-        registerButton = findViewById(R.id.register_Button);
+        userIdEditText = findViewById(R.id.UserID);
+        registerImageView = findViewById(R.id.imageView);
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
+        registerImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 registerUser();

@@ -42,7 +42,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="8dp"
-                        android:text="안녕하세요 퍼줄게님"
+                        android:text=""
                         android:textSize="20sp"
                         app:layout_constraintStart_toEndOf="@+id/imageView"
                         app:layout_constraintTop_toTopOf="@+id/imageView" />
