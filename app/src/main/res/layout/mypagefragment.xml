@@ -7,283 +7,296 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/arrow_back"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_alignParentStart="true"/>
-
-
-            <TextView
-                android:id="@+id/mypage_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:textSize="23dp"
-                android:textStyle="bold"
-                android:text="마이페이지" />
-
-            <ImageView
-                android:id="@+id/home"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_alignParentEnd="true"
-                app:srcCompat="@drawable/home" />
-        </RelativeLayout>
-
-        <ImageView
-            android:id="@+id/profile_ImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/profile" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="32dp"
-                        android:orientation="horizontal">
-
-                        <ImageButton
-                            android:id="@+id/pay"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_weight="1"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:scaleType="fitCenter"
-                            android:background="@null"
-                            app:srcCompat="@drawable/pay" />
-
-                        <ImageButton
-                            android:id="@+id/choice"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_weight="1"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:scaleType="fitCenter"
-                            android:background="@null"
-                            app:srcCompat="@drawable/choice" />
-
-                        <ImageButton
-                            android:id="@+id/review"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:scaleType="fitCenter"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            app:srcCompat="@drawable/review" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/my_pay"
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:gravity="center"
-                            android:text="결제 내역" />
-
-                        <TextView
-                            android:id="@+id/my_choice"
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:gravity="center"
-                            android:text="나의 찜" />
-
-                        <TextView
-                            android:id="@+id/my_review"
-                            android:layout_width="70dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:gravity="center"
-                            android:text="리뷰 관리" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/peojulgae"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:gravity="center"
-                        android:background="@null"
-                        android:textSize="17dp"
-                        android:textStyle="bold"
-                        android:text="퍼줄게와 '5번째' 함께하고 있습니다." />
-
-                </LinearLayout>
-            </FrameLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/coupon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:textSize="15dp"
-                        android:gravity="center_vertical"
-                        android:paddingStart="16dp"
-                        android:drawablePadding="8dp"
-                        android:background="@null"
-                        android:text="쿠폰함" />
-
-                    <TextView
-                        android:id="@+id/point"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@null"
-                        android:drawablePadding="8dp"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:textSize="15dp"
-                        android:gravity="center_vertical"
-                        android:paddingStart="16dp"
-                        android:text="포인트" />
-                </LinearLayout>
-            </FrameLayout>
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/payment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:textSize="15dp"
-            android:gravity="center_vertical"
-            android:layout_marginTop="16dp"
-            android:background="@null"
-            android:paddingStart="24dp"
-            android:drawablePadding="10dp"
-            android:text="결제 수단 관리" />
-
-        <TextView
-            android:id="@+id/member_info"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginTop="16dp"
-            android:inputType="text"
-            android:textSize="15dp"
-            android:gravity="center_vertical"
-            android:background="@null"
-            android:paddingStart="24dp"
-            android:drawablePadding="10dp"
-            android:text="회원 정보 관리" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="bottom"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp">
+
+                <ImageView
+                    android:id="@+id/arrow_back"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/arrow_back" />
+
+
+                <TextView
+                    android:id="@+id/mypage_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="마이페이지"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/home"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:srcCompat="@drawable/home" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/profile_ImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/profile" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="32dp"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/pay"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/pay" />
+
+                            <ImageButton
+                                android:id="@+id/choice"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/choice" />
+
+                            <ImageButton
+                                android:id="@+id/review"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/review" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/my_pay"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="결제 내역" />
+
+                            <TextView
+                                android:id="@+id/my_choice"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="나의 찜" />
+
+                            <TextView
+                                android:id="@+id/my_review"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginEnd="16dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="리뷰 관리" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/peojulgae"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:inputType="text"
+                            android:text="퍼줄게와 '5번째' 함께하고 있습니다."
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/coupon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:drawableStart="@drawable/drawble_resize_coupon"
+                            android:drawablePadding="8dp"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:inputType="text"
+                            android:paddingStart="16dp"
+                            android:text="쿠폰함"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/point"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:drawableStart="@drawable/drawble_resize_point"
+                            android:drawablePadding="8dp"
+                            android:ems="10"
+                            android:gravity="center_vertical"
+                            android:inputType="text"
+                            android:paddingStart="16dp"
+                            android:text="포인트"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
+                android:id="@+id/payment"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:text="1:1 문의하기" />
+                android:layout_marginTop="32dp"
+                android:drawableStart="@drawable/drawble_resize_payment"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:paddingStart="24dp"
+                android:text="결제 수단 관리"
+                android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+                android:id="@+id/member_info"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:text="공지사항" />
+                android:layout_marginTop="32dp"
+                android:drawableStart="@drawable/drawble_resize_person"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:inputType="text"
+                android:paddingStart="24dp"
+                android:text="회원 정보 관리"
+                android:textSize="15dp" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:text="약관 및 정책" />
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="1:1 문의하기"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="공지사항"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="약관 및 정책"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/login_Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:text="login" />
+
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/login_Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="login" />
-
-
-    </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
