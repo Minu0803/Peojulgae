@@ -19,6 +19,7 @@ import fragment.Frag3;
 import fragment.Frag4;
 
 //rice
+//
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
