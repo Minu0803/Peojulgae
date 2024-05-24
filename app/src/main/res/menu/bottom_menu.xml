@@ -15,7 +15,7 @@
         android:id="@+id/fragment_mart"
         android:title="마트"
         android:enabled="true"
-        android:icon="@drawable/mart" />
+        android:icon="@drawable/martimg" />
     <item
         android:id="@+id/fragment_mypage"
         android:title="마이페이지"
