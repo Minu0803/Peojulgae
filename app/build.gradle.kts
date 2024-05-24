@@ -71,7 +71,21 @@ dependencies {
     implementation ("com.google.firebase:firebase-analytics")
     implementation ("com.google.firebase:firebase-auth:21.0.1")
 
-
+    implementation (libs.oauth)
+    implementation (libs.kotlin.stdlib)
+    implementation (libs.kotlinx.coroutines.android)
+    implementation (libs.appcompat.v131)
+    implementation (libs.legacy.support.core.utils)
+    implementation (libs.browser)
+    implementation (libs.security.crypto)
+    implementation (libs.core.ktx)
+    implementation (libs.fragment.ktx)
+    implementation (libs.lifecycle.viewmodel.ktx)
+    implementation (libs.retrofit)
+    implementation (libs.converter.gson)
+    implementation (libs.moshi.kotlin)
+    implementation (libs.logging.interceptor)
+    implementation (libs.lottie)
 
 
 
