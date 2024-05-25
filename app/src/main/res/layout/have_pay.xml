@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/have_scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,7 +26,7 @@
                 android:layout_marginTop="24dp">
 
                 <ImageView
-                    android:id="@+id/pay_arrowback"
+                    android:id="@+id/have_arrow_back"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_alignParentStart="true"
@@ -35,16 +35,16 @@
                     app:srcCompat="@drawable/arrow_back" />
 
                 <TextView
-                    android:id="@+id/take_away"
+                    android:id="@+id/have_in"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="포장하기"
+                    android:text="매장 이용하기"
                     android:textSize="24dp"
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/pay_home"
+                    android:id="@+id/have_home"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_alignParentEnd="true"
@@ -53,78 +53,6 @@
                     app:srcCompat="@drawable/home" />
 
             </RelativeLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="160dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/pay_edit_round">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/take_text01"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:text="개인 포장 용기 지참 여부"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <RadioGroup
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp">
-
-                            <RadioButton
-                                android:id="@+id/take_pay_radio01"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:text="용기 X" />
-
-                            <RadioButton
-                                android:id="@+id/take_pay_radio02"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="8dp"
-                                android:text="용기 O" />
-
-                        </RadioGroup>
-
-                        <TextView
-                            android:id="@+id/take_text02"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginBottom="6dp"
-                            android:text="-10%"
-                            android:textColor="@color/red"
-                            android:textSize="17dp" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/take_text03"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:text="*개인 용기 지참시 추가 할인!"
-                        android:textColor="@color/darkgrey02" />
-
-                </LinearLayout>
-            </FrameLayout>
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -146,7 +74,69 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/take_text04"
+                            android:id="@+id/have_text01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_weight="1"
+                            android:text="도착 시간 지정"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/have_text02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:text="오후 15시 30분"
+                            android:textSize="16dp"/>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/have_pay_arrow_right01"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="0"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/arrow_right" />
+
+                    <TextView
+                        android:id="@+id/have_text03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="0"
+                        android:layout_gravity="center"
+                        android:text="시간 입력하기" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/pay_edit_round">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/have_text04"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
@@ -157,7 +147,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/take_text05"
+                            android:id="@+id/have_text05"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -168,7 +158,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/take_pay_arrow_right01"
+                        android:id="@+id/have_pay_arrow_right02"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_weight="0"
@@ -176,7 +166,7 @@
                         app:srcCompat="@drawable/arrow_right" />
 
                     <TextView
-                        android:id="@+id/take_text06"
+                        android:id="@+id/have_text06"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
@@ -207,7 +197,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/take_text07"
+                            android:id="@+id/have_text07"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
@@ -218,7 +208,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/take_text08"
+                            android:id="@+id/have_text08"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -229,7 +219,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/take_pay_arrow_right02"
+                        android:id="@+id/have_pay_arrow_right03"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_weight="0"
@@ -237,7 +227,7 @@
                         app:srcCompat="@drawable/arrow_right" />
 
                     <TextView
-                        android:id="@+id/take_text09"
+                        android:id="@+id/have_text09"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
@@ -262,7 +252,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/take_text10"
+                        android:id="@+id/have_text10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -280,25 +270,24 @@
                         <RadioGroup
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="8dp">
+                            android:layout_marginStart="5dp">
 
                             <RadioButton
-                                android:id="@+id/take_pay_radio03"
+                                android:id="@+id/have_pay_radio01"
                                 android:layout_width="wrap_content"
                                 android:layout_height="25dp"
                                 android:layout_marginTop="8dp"
                                 android:text="카카오 페이" />
 
                             <RadioButton
-                                android:id="@+id/take_pay_radio04"
+                                android:id="@+id/have_pay_radio02"
                                 android:layout_width="wrap_content"
                                 android:layout_height="25dp"
                                 android:layout_marginTop="8dp"
                                 android:text="네이버 페이" />
 
                             <RadioButton
-                                android:id="@+id/take_pay_radio05"
+                                android:id="@+id/have_pay_radio03"
                                 android:layout_width="wrap_content"
                                 android:layout_height="25dp"
                                 android:layout_marginTop="8dp"
@@ -312,7 +301,7 @@
                             android:orientation="vertical">
 
                             <ImageView
-                                android:id="@+id/take_pay_kakao"
+                                android:id="@+id/have_pay_kakao"
                                 android:layout_width="50dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="3dp"
@@ -322,10 +311,11 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/take_text11"
+                        android:id="@+id/have_text11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
                         android:text="* 카드 혜택 보기"
                         android:textColor="@color/darkgrey02"/>
                 </LinearLayout>
@@ -345,7 +335,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/take_text12"
+                        android:id="@+id/have_text12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -373,7 +363,7 @@
                                 android:orientation="horizontal">
 
                                 <RadioButton
-                                    android:id="@+id/take_pay_radio06"
+                                    android:id="@+id/have_pay_radio04"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="쿠폰 사용" />
@@ -387,7 +377,7 @@
                             </LinearLayout>
 
                             <RadioButton
-                                android:id="@+id/take_pay_radio07"
+                                android:id="@+id/have_pay_radio05"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="사용 가능한 쿠폰이 없어요." />
@@ -395,7 +385,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/take_text15"
+                        android:id="@+id/have_text13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -411,7 +401,7 @@
                         android:orientation="horizontal">
 
                         <EditText
-                            android:id="@+id/take_point_edit01"
+                            android:id="@+id/have_point_edit01"
                             android:layout_width="wrap_content"
                             android:layout_height="45dp"
                             android:layout_marginStart="8dp"
@@ -423,7 +413,7 @@
                             android:paddingStart="12dp"/>
 
                         <TextView
-                            android:id="@+id/take_text16"
+                            android:id="@+id/have_text14"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="12dp"
@@ -456,7 +446,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/take_text18"
+                            android:id="@+id/have_text15"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
@@ -467,7 +457,7 @@
                             android:textStyle="bold"/>
 
                         <TextView
-                            android:id="@+id/take_text19"
+                            android:id="@+id/have_text16"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -477,7 +467,7 @@
                     </LinearLayout>
 
                     <ImageView
-                        android:id="@+id/take_pay_arrow_right03"
+                        android:id="@+id/have_pay_arrow_right04"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_weight="0"
@@ -485,7 +475,7 @@
                         app:srcCompat="@drawable/arrow_right" />
 
                     <TextView
-                        android:id="@+id/take_text20"
+                        android:id="@+id/have_text17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
@@ -518,7 +508,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/take_text21"
+                            android:id="@+id/have_text18"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
@@ -529,7 +519,7 @@
                             android:textStyle="bold"/>
 
                         <TextView
-                            android:id="@+id/take_text22"
+                            android:id="@+id/have_text19"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
@@ -541,7 +531,7 @@
                     </LinearLayout>
 
                     <View
-                        android:id="@+id/take_center_line01"
+                        android:id="@+id/have_center_line01"
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
                         android:layout_marginTop="8dp"
@@ -554,7 +544,7 @@
 
 
                         <TextView
-                            android:id="@+id/take_text23"
+                            android:id="@+id/have_text20"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
@@ -571,14 +561,14 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/take_text24"
+                                android:id="@+id/have_text21"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="음식 할인"
                                 android:textSize="20dp"/>
 
                             <TextView
-                                android:id="@+id/take_text25"
+                                android:id="@+id/have_text22"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
@@ -586,7 +576,7 @@
                                 android:textSize="20dp"/>
 
                             <TextView
-                                android:id="@+id/take_text26"
+                                android:id="@+id/have_text23"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="22dp"
@@ -602,7 +592,7 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/take_text27"
+                                android:id="@+id/have_text24"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="-1000원"
@@ -611,7 +601,7 @@
                                 android:textStyle="bold"/>
 
                             <TextView
-                                android:id="@+id/take_text28"
+                                android:id="@+id/have_text25"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
@@ -621,7 +611,7 @@
                                 android:textStyle="bold"/>
 
                             <TextView
-                                android:id="@+id/take_text29"
+                                android:id="@+id/have_text26"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="24dp"
@@ -638,7 +628,7 @@
 
 
             <TextView
-                android:id="@+id/take_text30"
+                android:id="@+id/have_text27"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -663,7 +653,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/take_text31"
+                        android:id="@+id/have_text28"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
@@ -672,7 +662,7 @@
                         android:textSize="16dp"/>
 
                     <ImageView
-                        android:id="@+id/take_pay_arrow_right04"
+                        android:id="@+id/have_pay_arrow_right05"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginEnd="18dp"
@@ -687,7 +677,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/take_text32"
+                        android:id="@+id/have_text29"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
@@ -696,7 +686,7 @@
                         android:textSize="16dp"/>
 
                     <ImageView
-                        android:id="@+id/take_pay_arrow_right05"
+                        android:id="@+id/have_pay_arrow_righ06"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_marginEnd="18dp"
@@ -705,7 +695,7 @@
                 </LinearLayout>
 
                 <CheckBox
-                    android:id="@+id/take_checkBox"
+                    android:id="@+id/have_checkBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="18dp"
@@ -714,12 +704,12 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/take_button"
+                android:id="@+id/have_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="14dp"
                 android:backgroundTint="@color/darkgrey"
                 android:text="결제 및 포장하기" />
 
