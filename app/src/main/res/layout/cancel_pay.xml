@@ -122,7 +122,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/arrow_right" />
+                                app:srcCompat="@drawable/arrow_line_right" />
 
                             <TextView
                                 android:id="@+id/cancel_text05"
@@ -290,7 +290,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/arrow_right" />
+                                app:srcCompat="@drawable/arrow_line_right" />
 
                             <TextView
                                 android:id="@+id/cancel_text14"
@@ -436,7 +436,7 @@
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
                                 android:layout_weight="1"
-                                app:srcCompat="@drawable/arrow_right" />
+                                app:srcCompat="@drawable/arrow_line_right" />
 
                             <TextView
                                 android:id="@+id/cancel_text22"
