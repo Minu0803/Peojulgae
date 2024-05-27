@@ -1,5 +1,6 @@
 package com.example.peojulgae;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import java.util.List;
         ExpandableAdapter expandableAdapter;
         HashMap<String, List<String>> categoryItemMap;
 
+        @SuppressLint("MissingInflatedId")
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -123,7 +125,7 @@ import java.util.List;
             public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
                 String categoryTitle = (String) getGroup(groupPosition);
                 if (convertView == null) {
-                    LayoutInflater inflater = LayoutInflater.from(com.example.peojulgae.MainActivity.this);
+                    LayoutInflater inflater = LayoutInflater.from(com.example.peojulgae.CategoryActivity.this);
                     convertView = inflater.inflate(R.layout.group_item, parent, false);
                 }
                 TextView textView = convertView.findViewById(R.id.groupTextView);
@@ -149,4 +151,3 @@ import java.util.List;
             }
         }
     }
-}
