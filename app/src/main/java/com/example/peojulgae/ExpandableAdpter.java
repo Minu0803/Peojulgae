@@ -10,13 +10,14 @@ import android.widget.TextView;
 import java.util.HashMap;
 import java.util.List;
 
-    public class ExpandableAdpter extends BaseExpandableListAdapter {
+public class ExpandableAdpter {
+    public class ExpandableAdapter extends BaseExpandableListAdapter {
 
         private Context context;
         private List<String> categoryList;
         private HashMap<String, List<String>> itemList;
 
-        public ExpandableAdpter (HashMap<String, List<String>> itemList) {
+        public ExpandableAdapter(HashMap<String, List<String>> itemList) {
             this.context = context;
             this.categoryList = categoryList;
             this.itemList = itemList;
