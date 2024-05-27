@@ -25,7 +25,7 @@ import java.util.List;
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            setContentView(R.layout.category_activity);
 
             expandableListView = findViewById(R.id.eListView);
             categoryItemMap = new HashMap<>();
@@ -125,7 +125,7 @@ import java.util.List;
             public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
                 String categoryTitle = (String) getGroup(groupPosition);
                 if (convertView == null) {
-                    LayoutInflater inflater = LayoutInflater.from(com.example.peojulgae.CategoryActivity.this);
+                    LayoutInflater inflater = LayoutInflater.from(CategoryActivity.this);
                     convertView = inflater.inflate(R.layout.group_item, parent, false);
                 }
                 TextView textView = convertView.findViewById(R.id.groupTextView);
@@ -137,7 +137,7 @@ import java.util.List;
             public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
                 String itemName = (String) getChild(groupPosition, childPosition);
                 if (convertView == null) {
-                    LayoutInflater inflater = LayoutInflater.from(com.example.peojulgae.CategoryActivity.this);
+                    LayoutInflater inflater = LayoutInflater.from(CategoryActivity.this);
                     convertView = inflater.inflate(R.layout.child_list, parent, false);
                 }
                 TextView textView = convertView.findViewById(R.id.childTextView);
