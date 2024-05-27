@@ -2,19 +2,17 @@ package com.example.peojulgae;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -22,20 +20,18 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.navercorp.nid.NaverIdLoginSDK;
-import com.navercorp.nid.oauth.OAuthLoginCallback;
-import com.navercorp.nid.oauth.view.NidOAuthLoginButton;
 
 import fragment.Frag1;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText emailEditText, passwordEditText, signupEditText, forgotpasswordEditText;
+    private EditText emailEditText, passwordEditText,signupEditText,forgotpasswordEditText;
     private ImageView loginclick;
+
+
     private CheckBox autoLoginCheckBox;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-    private NidOAuthLoginButton naverLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +46,6 @@ public class LoginActivity extends AppCompatActivity {
         loginclick = findViewById(R.id.login_click);
         signupEditText = findViewById(R.id.sign_up);
         autoLoginCheckBox = findViewById(R.id.auto_login);
-        naverLoginButton = findViewById(R.id.naver_login_button);
-
-        // 네이버 로그인 SDK 초기화
-        NaverIdLoginSDK.INSTANCE.initialize(this, getString(R.string.naver_client_id),
-                getString(R.string.naver_client_secret), getString(R.string.app_name));
 
         loginclick.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,26 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        naverLoginButton.setOAuthLogin(new OAuthLoginCallback() {
-            @Override
-            public void onSuccess() {
-                // 로그인 성공 시 액세스 토큰 가져오기
-                String accessToken = NaverIdLoginSDK.INSTANCE.getAccessToken();
-                Log.d("NaverLogin", "AccessToken: " + accessToken);
-                Toast.makeText(LoginActivity.this, "네이버 로그인 성공", Toast.LENGTH_SHORT).show();
-                // 추가 작업: 액세스 토큰을 사용해 사용자 정보 가져오기
-            }
 
-            @Override
-            public void onFailure(int httpStatus, @NonNull String message) {
-                Log.e("NaverLogin", "onFailure: httpStatus - " + httpStatus + " / message - " + message);
-            }
-
-            @Override
-            public void onError(int errorCode, @NonNull String message) {
-                Log.e("NaverLogin", "onError: errorCode - " + errorCode + " / message - " + message);
-            }
-        });
     }
 
     private void loginUser() {
