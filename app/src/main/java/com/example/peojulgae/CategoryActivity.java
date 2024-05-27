@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             String itemName = (String) getChild(groupPosition, childPosition);
             if (convertView == null) {
                 LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
-                convertView = inflater.inflate(R.layout.child_item, parent, false);
+                convertView = inflater.inflate(R.layout.child_list, parent, false);
             }
             TextView textView = convertView.findViewById(R.id.childTextView);
             textView.setText(itemName);
