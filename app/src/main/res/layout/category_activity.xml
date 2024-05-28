@@ -28,12 +28,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="11dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/arrow_back" />
+
 
         <TextView
             android:id="@+id/textView5"
@@ -46,12 +41,7 @@
             android:textSize="25dp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="14dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/home" />
+
 
     </LinearLayout>
 

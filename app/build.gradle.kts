@@ -64,6 +64,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.firebase.database)
     implementation(libs.firebase.database)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
