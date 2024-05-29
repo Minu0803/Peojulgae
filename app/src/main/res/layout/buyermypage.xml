@@ -10,101 +10,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- 로그인 레이아웃 -->
-        <LinearLayout
-            android:id="@+id/login_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Peojulgae"
-                    android:layout_gravity="end"
-                    android:padding="16dp" />
-            </FrameLayout>
-
-            <ImageView
-                android:id="@+id/background"
-                android:layout_width="300dp"
-                android:layout_height="200dp"
-                android:src="@drawable/file"
-                android:layout_gravity="center"
-                android:layout_marginBottom="16dp" />
-
-            <TextView
-                android:id="@+id/login_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="24dp"
-                android:text="로그인"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_marginBottom="16dp" />
-
-            <EditText
-                android:id="@+id/email_edittext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/drawble_resize_id"
-                android:hint="이메일"
-                android:layout_marginBottom="16dp" />
-
-            <EditText
-                android:id="@+id/password_edittext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="비밀번호"
-                android:drawableLeft="@drawable/drawble_resize"
-                android:inputType="textPassword"
-                android:layout_marginBottom="16dp" />
-
-            <Button
-                android:id="@+id/login_Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="로그인"
-                android:layout_marginBottom="16dp" />
-
-            <CheckBox
-                android:id="@+id/autoLogin_CheckBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="자동 로그인"
-                android:paddingTop="16dp"
-                android:layout_marginBottom="16dp" />
-
-            <Button
-                android:id="@+id/register_Button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="회원가입"
-                android:layout_marginBottom="16dp" />
-
-            <Button
-                android:id="@+id/forgot_PasswordButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Forgot Password"
-                android:layout_marginBottom="16dp" />
-
-        </LinearLayout>
-
         <!-- 구매자 레이아웃 -->
         <LinearLayout
             android:id="@+id/buyer_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -116,7 +28,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp">
 
-
                     <TextView
                         android:id="@+id/mypage_text"
                         android:layout_width="wrap_content"
@@ -125,7 +36,6 @@
                         android:text="마이페이지"
                         android:textSize="23dp"
                         android:textStyle="bold" />
-
 
                 </RelativeLayout>
 
@@ -152,7 +62,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
-
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -372,52 +281,10 @@
 
                 </LinearLayout>
 
-
-
-
             </LinearLayout>
 
         </LinearLayout>
 
-        <!-- 판매자 레이아웃 -->
-        <LinearLayout
-            android:id="@+id/seller_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="판매자 마이페이지"
-                android:textSize="24sp" />
-
-            <!-- 판매자 마이페이지 레이아웃 만들었으면 여기 아래에다가 넣어주세요 -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="판매한 상품 목록"
-                android:textSize="18sp"
-                android:paddingTop="16dp"/>
-
-            <ListView
-                android:id="@+id/sold_items_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <!-- 추가 판매자 UI 요소 요기 위에 -->
-
-        </LinearLayout>
-
-        <!-- 로그아웃 버튼 -->
-
-        <Button
-            android:id="@+id/logout_Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="로그아웃"
-            android:visibility="gone" />
     </LinearLayout>
 
 </ScrollView>

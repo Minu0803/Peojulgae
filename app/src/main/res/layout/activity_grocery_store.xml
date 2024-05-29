@@ -61,11 +61,11 @@
                 <SearchView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:iconifiedByDefault="false"
-                    android:queryBackground="@drawable/searchview_background"
-                    android:queryHint="내 주변 마트를 검색해 보세요."
                     android:layout_weight="1"
-                    android:padding="5dp"/>
+                    android:iconifiedByDefault="false"
+                    android:padding="5dp"
+                    android:queryBackground="@drawable/searchview_background"
+                    android:queryHint="내 주변 마트를 검색해 보세요." />
 
                 <ImageView
                     android:id="@+id/imageView5"
