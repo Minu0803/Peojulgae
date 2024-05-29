@@ -371,20 +371,20 @@
                             android:text="7,650원" />
                     </LinearLayout>
 
+                    <EditText
+                        android:id="@+id/water_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@null"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:text="-식초와 함께 더 맛있어요" />
+
                 </LinearLayout>
 
 
             </LinearLayout>
-
-            <EditText
-                android:id="@+id/water_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@null"
-                android:ems="10"
-                android:inputType="text"
-                android:text="-식초와 함께 더 맛있어요" />
 
             <LinearLayout
                 android:layout_width="match_parent"
