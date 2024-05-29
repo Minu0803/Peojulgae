@@ -91,23 +91,6 @@
                 android:textSize="20dp"
                 android:textStyle="normal" />
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="7dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/arrow_down_red" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="10%"
-                android:textColor="#FF0000"
-                android:textSize="20dp"
-                android:textStyle="normal" />
-
         </LinearLayout>
 
         <LinearLayout
