@@ -76,7 +76,7 @@
 
             <TextView
                 android:id="@+id/textView11"
-                android:layout_width="184dp"
+                android:layout_width="315dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="가격 "
@@ -84,12 +84,23 @@
 
             <TextView
                 android:id="@+id/textView15"
-                android:layout_width="wrap_content"
+                android:layout_width="182dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="8,900원"
                 android:textSize="20dp"
                 android:textStyle="normal" />
+
+            <EditText
+                android:id="@+id/egg_discount_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:drawableStart="@drawable/drawble_resize_arrow_down"
+                android:ems="10"
+                android:inputType="text"
+                android:text="10%" />
 
         </LinearLayout>
 
