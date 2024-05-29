@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="370dp"
-        android:layout_height="692dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
         android:orientation="vertical"
@@ -81,6 +81,7 @@
                 android:layout_weight="1"
                 android:text="가격 "
                 android:textSize="20dp" />
+
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
