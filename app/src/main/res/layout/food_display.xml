@@ -2,360 +2,435 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/cancel_pay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BaloonActivity">
+    tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="194dp"
-            app:srcCompat="@drawable/ganajumbo" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="77dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView2"
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="가나 점보 돈까스"
-                android:textSize="35dp"
-                android:textStyle="bold" />
+                android:layout_height="327dp"
+                android:layout_marginTop="24dp">
 
-            <TextView
-                android:id="@+id/textView3"
+                <ImageView
+                    android:id="@+id/cancel_arrow_back01"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:srcCompat="@drawable/arrow_back" />
+
+                <ImageView
+                    android:id="@+id/cancel_home"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:srcCompat="@drawable/home" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/food2" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="서일대 근처 최고의 가성비 맛집!"
-                android:textStyle="normal" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="377dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="15dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="가나 점보 돈까스"
+                            android:textSize="30dp" />
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="12dp"
-                android:layout_height="wrap_content"
-                android:text="" />
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="서일대 근처 최고의 가성비 맛집!" />
 
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="315dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="가격 "
-                android:textSize="20dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal" />
 
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="182dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="8,900원"
-                android:textSize="20dp"
-                android:textStyle="normal" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/egg_discount_percent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@null"
-                android:drawableStart="@drawable/drawble_resize_arrow_down"
-                android:ems="10"
-                android:inputType="text"
-                android:text="10%" />
+                            <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="184dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="가격" />
 
-        </LinearLayout>
+                            <TextView
+                                android:id="@+id/textView2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="8,900원" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="28dp"
-            android:orientation="horizontal">
+                            <EditText
+                                android:id="@+id/food_discount_percent"
+                                android:layout_width="82dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@null"
+                                android:drawableStart="@drawable/drawble_resize_arrow_down"
+                                android:ems="10"
+                                android:inputType="text"
+                                android:text="10%" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="173dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="" />
+                        </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="할인된 총 금액 : " />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="8,010원"
-                android:textSize="20dp"
-                android:textStyle="normal" />
-        </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/textView6"
+                                    android:layout_width="165dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="" />
 
-            <TextView
-                android:id="@+id/textView21"
+                                <TextView
+                                    android:id="@+id/textView4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="할인된 총 금액" />
+
+                                <TextView
+                                    android:id="@+id/textView7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="8,010원" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="옵션 추가하기"
-                android:textSize="30dp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="131dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="단무지 추가"
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/textView22"
-                android:layout_width="87dp"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                android:text="- - - - - - - - -  " />
-
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:layout_weight="1"
-                android:text="+700원"
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="공깃밥 추가"
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="104dp"
-                android:layout_height="34dp"
-                android:layout_weight="1"
-                android:text="- - - - - - - - -  " />
-
-            <TextView
-                android:id="@+id/textView27"
-                android:layout_width="wrap_content"
-                android:layout_height="31dp"
-                android:layout_weight="1"
-                android:text="+1500원"
-                android:textSize="18dp"
-                android:textStyle="normal" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/checkBox4"
-                android:layout_width="178dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="콜라 500ml 추가"
-                android:textSize="18dp"
-                android:textStyle="normal" />
-
-            <TextView
-                android:id="@+id/textView28"
-                android:layout_width="81dp"
-                android:layout_height="32dp"
-                android:layout_weight="1"
-                android:text="- - - - - - - - - -  " />
-
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:layout_weight="1"
-                android:text="+1000원"
-                android:textSize="18dp"
-                android:textStyle="normal" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView42"
-                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="" />
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView43"
-                android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="375dp"
+                    android:layout_height="285dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="376dp"
+                        android:layout_height="285dp"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView21"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="옵션 추가하기"
+                                android:textSize="30dp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+                            <CheckBox
+                                android:id="@+id/checkBox"
+                                android:layout_width="131dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="단무지 추가"
+                                android:textSize="18dp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/textView22"
+                                android:layout_width="87dp"
+                                android:layout_height="35dp"
+                                android:layout_weight="1"
+                                android:text="- - - - - - - - -  " />
+
+                            <TextView
+                                android:id="@+id/textView23"
+                                android:layout_width="wrap_content"
+                                android:layout_height="37dp"
+                                android:layout_weight="1"
+                                android:text="+700원"
+                                android:textSize="18dp"
+                                android:textStyle="normal" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/checkBox3"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="공깃밥 추가"
+                                android:textSize="18dp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/textView25"
+                                android:layout_width="104dp"
+                                android:layout_height="34dp"
+                                android:layout_weight="1"
+                                android:text="- - - - - - - - -  " />
+
+                            <TextView
+                                android:id="@+id/textView27"
+                                android:layout_width="wrap_content"
+                                android:layout_height="31dp"
+                                android:layout_weight="1"
+                                android:text="+1500원"
+                                android:textSize="18dp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/checkBox4"
+                                android:layout_width="178dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="콜라 500ml 추가"
+                                android:textSize="18dp"
+                                android:textStyle="normal" />
+
+                            <TextView
+                                android:id="@+id/textView28"
+                                android:layout_width="81dp"
+                                android:layout_height="32dp"
+                                android:layout_weight="1"
+                                android:text="- - - - - - - - - -  " />
+
+                            <TextView
+                                android:id="@+id/textView29"
+                                android:layout_width="wrap_content"
+                                android:layout_height="37dp"
+                                android:layout_weight="1"
+                                android:text="+1000원"
+                                android:textSize="18dp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="42dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView42"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="" />
+
+                            <TextView
+                                android:id="@+id/textView43"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="수량"
+                                android:textSize="18dp"
+                                android:textStyle="bold" />
+
+                            <Button
+                                android:id="@+id/button01"
+                                android:layout_width="44dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:backgroundTint="@android:color/darker_gray"
+                                android:text="-" />
+
+                            <Button
+                                android:id="@+id/button03"
+                                android:layout_width="44dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:backgroundTint="@android:color/darker_gray"
+                                android:text="1" />
+
+                            <Button
+                                android:id="@+id/button10"
+                                android:layout_width="44dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:backgroundTint="@android:color/darker_gray"
+                                android:text="+" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/button8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="포장하기" />
+
+                            <Button
+                                android:id="@+id/button9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="매장식사" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/button4"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@android:color/holo_green_dark"
+                                android:text="포장하기" />
+
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/main"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                tools:context=".BaloonActivity"/>
+
+
+                            <Button
+                                android:id="@+id/button5"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@android:color/holo_green_dark"
+                                android:text="매장 식사" />
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="수량"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:layout_marginTop="24dp"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/button01"
-                android:layout_width="44dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="@android:color/darker_gray"
-                android:text="-" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"/>
 
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="" />
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/button101"
-                android:layout_width="44dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@android:color/darker_gray"
-                android:text="1" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="1dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button03"
-                android:layout_width="44dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:backgroundTint="@android:color/darker_gray"
-                android:text="+" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@android:color/holo_green_dark"
-                android:text="포장하기" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@android:color/holo_green_dark"
-                android:text="매장 식사" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/imageView4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.002"
-        app:srcCompat="@drawable/home" />
-
-    <ImageButton
-        android:id="@+id/imageView2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="288dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.002"
-        app:srcCompat="@drawable/arrow_back" />
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
