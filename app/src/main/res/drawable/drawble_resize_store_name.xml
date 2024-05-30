@@ -4,5 +4,6 @@
         android:drawable="@drawable/store_name"
         android:width="40dp"
         android:height="40dp"
+
         ></item>
 </layer-list>
