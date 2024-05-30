@@ -25,7 +25,7 @@
                 android:layout_height="327dp"
                 android:layout_marginTop="24dp">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/cancel_arrow_back01"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -34,7 +34,7 @@
                     android:layout_marginTop="8dp"
                     app:srcCompat="@drawable/arrow_back" />
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/cancel_home"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
