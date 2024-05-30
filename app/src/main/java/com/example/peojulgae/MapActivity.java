@@ -1,5 +1,6 @@
 package com.example.peojulgae;
 
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
@@ -36,7 +37,10 @@ import com.kakao.vectormap.label.LabelOptions;
 import com.kakao.vectormap.label.LabelStyle;
 import com.kakao.vectormap.label.TrackingManager;
 
-public class MapActivity extends AppCompatActivity {
+import java.util.HashMap;
+import java.util.Map;
+
+public class MapActivity extends AppCompatActivity implements KakaoMap.OnLabelClickListener {
     private final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
     private final String[] locationPermissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
     private FusedLocationProviderClient fusedLocationClient;
@@ -47,10 +51,14 @@ public class MapActivity extends AppCompatActivity {
     private boolean requestingLocationUpdates = false;
     private LocationRequest locationRequest;
     private LocationCallback locationCallback;
+    private KakaoMap kakaoMap;
+    private Map<String, Label> labelMap = new HashMap<>();
+
     private KakaoMapReadyCallback readyCallback = new KakaoMapReadyCallback() {
         @Override
-        public void onMapReady(@NonNull KakaoMap kakaoMap) {
+        public void onMapReady(@NonNull KakaoMap map) {
             progressBar.setVisibility(View.GONE);
+            kakaoMap = map;
             LabelLayer layer = kakaoMap.getLabelManager().getLayer();
             centerLabel = layer.addLabel(LabelOptions.from("centerLabel", startPosition)
                     .setStyles(LabelStyle.from(R.drawable.red_marker).setAnchorPoint(0.5f, 0.5f))
@@ -58,6 +66,10 @@ public class MapActivity extends AppCompatActivity {
             TrackingManager trackingManager = kakaoMap.getTrackingManager();
             trackingManager.startTracking(centerLabel);
             startLocationUpdates();
+            addMarkers(kakaoMap);
+
+            // Set the label click listener
+            kakaoMap.setOnLabelClickListener(MapActivity.this);
         }
 
         @NonNull
@@ -98,7 +110,6 @@ public class MapActivity extends AppCompatActivity {
         } else {
             ActivityCompat.requestPermissions(this, locationPermissions, LOCATION_PERMISSION_REQUEST_CODE);
         }
-
     }
 
     @Override
@@ -117,7 +128,7 @@ public class MapActivity extends AppCompatActivity {
 
     @SuppressLint("MissingPermission")
     private void getStartLocation() {
-        fusedLocationClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY,null)
+        fusedLocationClient.getCurrentLocation(Priority.PRIORITY_HIGH_ACCURACY, null)
                 .addOnSuccessListener(this, location -> {
                     if (location != null) {
                         startPosition = LatLng.from(location.getLatitude(), location.getLongitude());
@@ -131,7 +142,6 @@ public class MapActivity extends AppCompatActivity {
         requestingLocationUpdates = true;
         fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
     }
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -171,5 +181,59 @@ public class MapActivity extends AppCompatActivity {
                 })
                 .setCancelable(false)
                 .show();
+    }
+
+    private void addMarkers(@NonNull KakaoMap kakaoMap) {
+        LabelLayer layer = kakaoMap.getLabelManager().getLayer();
+
+        // 첫번째 마커 찍기
+        LatLng position1 = LatLng.from(37.5866169, 127.0977436); // "가나 점보 돈까스"
+        Label marker1 = layer.addLabel(LabelOptions.from("specificMarker1", position1)
+                .setStyles(LabelStyle.from(R.drawable.red_marker).setAnchorPoint(0.5f, 0.5f))
+                .setRank(1));
+        labelMap.put("specificMarker1", marker1);
+
+        // 두번째 마커 찍기..되겠지..?
+        LatLng position2 = LatLng.from(37.4735357, 126.9737232); // Coordinates for "사당초등학교"
+        Label marker2 = layer.addLabel(LabelOptions.from("specificMarker2", position2)
+                .setStyles(LabelStyle.from(R.drawable.red_marker).setAnchorPoint(0.5f, 0.5f))
+                .setRank(1));
+        labelMap.put("specificMarker2", marker2);
+    }
+
+    private void showMarkerInfoDialog(String title, String message, String labelId) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", null)
+                .setNeutralButton("Open Baloon Layout", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(MapActivity.this, BaloonActivity.class);
+                        intent.putExtra("labelId", labelId);
+                        startActivity(intent);
+                    }
+                })
+                .show();
+    }
+
+    @Override
+    public void onLabelClicked(KakaoMap kakaoMap, LabelLayer layer, Label label) {
+        for (Map.Entry<String, Label> entry : labelMap.entrySet()) {
+            if (entry.getValue().equals(label)) {
+                String markerInfo = "";
+                String labelId = entry.getKey();
+                switch (labelId) {
+                    case "specificMarker1":
+                        markerInfo = "가나 점보 돈까스";
+                        break;
+                    case "specificMarker2":
+                        markerInfo = "사당초등학교";
+                        break;
+                }
+                showMarkerInfoDialog("Marker Info", markerInfo, labelId);
+                break;
+            }
+        }
     }
 }
