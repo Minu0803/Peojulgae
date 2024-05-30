@@ -25,19 +25,19 @@
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/store_2"/>
+                android:src="@drawable/store_2" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/store_name"/>
+                android:src="@drawable/store_name" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/ganajumbo_store"/>
+                android:src="@drawable/ganajumbo_store" />
 
         </androidx.recyclerview.widget.RecyclerView>
 
