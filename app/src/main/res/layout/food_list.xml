@@ -184,14 +184,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="375dp"
-                    android:layout_height="285dp"
+                    android:layout_height="273dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     app:cardCornerRadius="15dp">
 
                     <LinearLayout
                         android:layout_width="376dp"
-                        android:layout_height="285dp"
+                        android:layout_height="273dp"
                         android:orientation="vertical">
 
 
@@ -206,8 +206,8 @@
                                 android:id="@+id/textView21"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="옵션 추가하기"
                                 android:gravity="center"
+                                android:text="옵션 추가하기"
                                 android:textSize="30dp"
                                 android:textStyle="bold" />
 
@@ -319,8 +319,8 @@
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:text="수량"
                                 android:gravity="center"
+                                android:text="수량"
                                 android:textSize="18dp"
                                 android:textStyle="bold" />
 
@@ -369,39 +369,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="매장식사" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <Button
-                                android:id="@+id/button4"
-                                android:layout_width="120dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:backgroundTint="@android:color/holo_green_dark"
-                                android:text="포장하기" />
-
-                            <?xml version="1.0" encoding="utf-8"?>
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:id="@+id/main"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                tools:context=".BaloonActivity"/>
-
-
-                            <Button
-                                android:id="@+id/button5"
-                                android:layout_width="120dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:backgroundTint="@android:color/holo_green_dark"
-                                android:text="매장 식사" />
-
-
-
                         </LinearLayout>
 
 
