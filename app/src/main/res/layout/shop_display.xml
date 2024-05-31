@@ -2,227 +2,233 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/store_display"
+    android:id="@+id/cancel_pay"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/image_frame"
-        android:layout_width="408dp"
-        android:layout_height="258dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/store_info"
-            android:layout_width="match_parent"
-            android:layout_height="247dp">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/store_2" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/store_name" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ganajumbo_store" />
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-        <ImageButton
-            android:id="@+id/arrow_back"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/arrow_back"
-            app:tint="@color/white" />
-
-        <ImageButton
-            android:id="@+id/home"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="end"
-            app:srcCompat="@drawable/home"
-            app:tint="@color/white" />
-
-    </FrameLayout>
-
     <ScrollView
-        android:layout_width="412dp"
-        android:layout_height="473dp"
-        android:fillViewport="true"
-        android:focusable="true"
-        android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_frame">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
+                android:layout_height="327dp"
+                android:layout_marginTop="24dp">
 
-                <TextView
-                    android:id="@+id/store_name"
-                    android:layout_width="244dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="0.9"
-                    android:background="@null"
-                    android:drawableStart="@drawable/drawble_resize_store_name"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="가나 점보 돈까스" />
-
-                <TextView
-                    android:id="@+id/review"
-                    android:layout_width="126dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:drawableStart="@drawable/drawble_resize_heart"
-                    android:drawablePadding="4dp"
-                    android:ems="10"
-                    android:inputType="text"
-                    android:text="4.5 (52)" />
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.9"
-                    app:srcCompat="@drawable/arrow_right"/>
-
-            </LinearLayout>
-
-            <EditText
-                android:id="@+id/store_introduce"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="13dp"
-                android:background="@null"
-                android:ems="10"
-                android:inputType="text"
-                android:text="- Since1993 가나점보돈까스!" />
-
-            <TextView
-                android:id="@+id/menu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="menu"
-                android:textSize="25sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center"
-                    android:text="추천메뉴"
-                    android:textColor="@color/black"
-                    android:textSize="8dp"
-                    android:textStyle="normal" />
-
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center"
-                    android:text="추천메뉴"
-                    android:textColor="@color/black"
-                    android:textSize="8dp"
-                    android:textStyle="normal" />
-
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center"
-                    android:text="세트"
-                    android:textColor="@color/black"
-                    android:textSize="8dp"
-                    android:textStyle="normal" />
-
-                <Button
-                    android:id="@+id/button6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center"
-                    android:text="사이드"
-                    android:textColor="@color/black"
-                    android:textSize="8dp"
-                    android:textStyle="normal" />
-
-                <Button
-                    android:id="@+id/button7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:gravity="center"
-                    android:text="음료"
-                    android:textColor="@color/black"
-                    android:textSize="8dp"
-                    android:textStyle="normal" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    app:cardCornerRadius="10dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/store_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="247dp">
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/ganajumbo" />
+                        android:src="@drawable/store_2" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/store_name" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ganajumbo_store" />
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <ImageButton
+                    android:id="@+id/cancel_arrow_back01"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:srcCompat="@drawable/arrow_back" />
+
+                <ImageButton
+                    android:id="@+id/cancel_home"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    app:srcCompat="@drawable/home" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <TextView
+                        android:id="@+id/store_name"
+                        android:layout_width="244dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="0.9"
+                        android:background="@null"
+                        android:drawableStart="@drawable/drawble_resize_store_name"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:text="가나 점보 돈까스" />
+
+                    <TextView
+                        android:id="@+id/review"
+                        android:layout_width="126dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:drawableStart="@drawable/drawble_resize_heart"
+                        android:drawablePadding="4dp"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:text="4.5 (52)" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.9"
+                        app:srcCompat="@drawable/arrow_right" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="3dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/store_introduce"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:background="@null"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:text="- Since1993 가나점보돈까스!" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="추천메뉴"
+                        android:textColor="@color/black"
+                        android:textSize="8dp"
+                        android:textStyle="normal" />
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="추천메뉴"
+                        android:textColor="@color/black"
+                        android:textSize="8dp"
+                        android:textStyle="normal" />
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="세트"
+                        android:textColor="@color/black"
+                        android:textSize="8dp"
+                        android:textStyle="normal" />
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="사이드"
+                        android:textColor="@color/black"
+                        android:textSize="8dp"
+                        android:textStyle="normal" />
+
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="음료"
+                        android:textColor="@color/black"
+                        android:textSize="8dp"
+                        android:textStyle="normal" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="154dp"
+                        android:layout_height="129dp"
+                        android:orientation="vertical"/>
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
@@ -308,40 +314,38 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="18dp"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    app:cardCornerRadius="10dp">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ganajumbo" />
-                </androidx.cardview.widget.CardView>
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="15dp"/>
 
                 <LinearLayout
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/water_name"
+                        android:id="@+id/food_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
                         android:background="@null"
                         android:ems="10"
                         android:inputType="text"
-                        android:text="물냉면"
+                        android:text="가나 점보 돈까스"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -351,17 +355,138 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/water_price"
+                            android:id="@+id/price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@null"
                             android:ems="10"
                             android:inputType="text"
-                            android:text="6,500원" />
+                            android:text="7,500원" />
 
                         <TextView
-                            android:id="@+id/water_percent"
+                            android:id="@+id/discount_percent02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:drawableStart="@drawable/drawble_resize_arrow_down"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:text="10%" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/p_price03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:background="@null"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:text="결제금액 : " />
+
+                        <TextView
+                            android:id="@+id/discount_percent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:text="6,750원" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/food_info02"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@null"
+                        android:ems="10"
+                        android:inputType="text"
+                        android:text="-특제 소스와 함께 더 맛있어요" />
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:orientation="vertical">
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="139dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="15dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sweet_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:background="@null"
+                        android:ems="19"
+                        android:inputType="text"
+                        android:text="고구마 점보 돈까스" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/sweet_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:text="7500원" />
+
+                        <TextView
+                            android:id="@+id/discount_percent01"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -378,7 +503,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/water_p_price"
+                            android:id="@+id/p_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -389,56 +514,54 @@
                             android:text="결제금액 : " />
 
                         <TextView
-                            android:id="@+id/water_discount_price"
+                            android:id="@+id/sweet_discount_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@null"
                             android:ems="10"
                             android:inputType="text"
-                            android:text="7,650원" />
+                            android:text="6,750원" />
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/water_info"
+                        android:id="@+id/food_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:background="@null"
                         android:ems="10"
                         android:inputType="text"
-                        android:text="-식초와 함께 더 맛있어요" />
+                        android:text="-특제 소스와 함께 더 맛있어요" />
+
 
                 </LinearLayout>
 
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:orientation="horizontal">
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="150dp"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    app:cardCornerRadius="10dp">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ganajumbo" />
-                </androidx.cardview.widget.CardView>
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="15dp"/>
 
                 <LinearLayout
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
@@ -518,6 +641,14 @@
                         android:inputType="text"
                         android:text="-특제 소스와 함께 더 맛있어요" />
                 </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:orientation="horizontal">
+
             </LinearLayout>
 
             <LinearLayout
@@ -525,38 +656,35 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal">
+
                 <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    app:cardCornerRadius="10dp">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="160dp"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ganajumbo" />
-                </androidx.cardview.widget.CardView>
-
+                    android:layout_width="156dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="15dp" />
 
                 <LinearLayout
-                    android:layout_width="200dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/food_name"
+                        android:id="@+id/water_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="25dp"
                         android:background="@null"
                         android:ems="10"
                         android:inputType="text"
-                        android:text="가나 점보 돈까스"
+                        android:text="물냉면"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -566,17 +694,17 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/price"
+                            android:id="@+id/water_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@null"
                             android:ems="10"
                             android:inputType="text"
-                            android:text="7,500원" />
+                            android:text="6,500원" />
 
                         <TextView
-                            android:id="@+id/discount_percent02"
+                            android:id="@+id/water_percent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -585,16 +713,15 @@
                             android:ems="10"
                             android:inputType="text"
                             android:text="10%" />
-
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/p_price03"
+                            android:id="@+id/water_p_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -605,132 +732,53 @@
                             android:text="결제금액 : " />
 
                         <TextView
-                            android:id="@+id/discount_percent"
+                            android:id="@+id/water_discount_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@null"
                             android:ems="10"
                             android:inputType="text"
-                            android:text="6,750원" />
+                            android:text="7,650원" />
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/food_info02"
+                        android:id="@+id/water_info"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:background="@null"
                         android:ems="10"
                         android:inputType="text"
-                        android:text="-특제 소스와 함께 더 맛있어요" />
+                        android:text="-식초와 함께 더 맛있어요" />
                 </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:orientation="vertical">
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    app:cardCornerRadius="10dp">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="160dp"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/ganajumbo" />
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="200dp"
+                    android:layout_width="156dp"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardCornerRadius="15dp"/>
 
-                    <TextView
-                        android:id="@+id/sweet_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
-                        android:background="@null"
-                        android:ems="19"
-                        android:inputType="text"
-                        android:text="고구마 점보 돈까스" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/sweet_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:ems="10"
-                            android:inputType="text"
-                            android:text="7500원" />
-
-                        <TextView
-                            android:id="@+id/discount_percent01"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:drawableStart="@drawable/drawble_resize_arrow_down"
-                            android:ems="10"
-                            android:inputType="text"
-                            android:text="10%" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/p_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-
-                            android:background="@null"
-                            android:ems="10"
-                            android:inputType="text"
-                            android:text="결제금액 : " />
-
-                        <TextView
-                            android:id="@+id/sweet_discount_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:ems="10"
-                            android:inputType="text"
-                            android:text="6,750원" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/food_info"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:background="@null"
-                        android:ems="10"
-                        android:inputType="text"
-                        android:text="-특제 소스와 함께 더 맛있어요" />
-                </LinearLayout>
             </LinearLayout>
+
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
