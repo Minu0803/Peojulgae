@@ -312,7 +312,7 @@
                             android:background="@null"
                             android:ems="10"
                             android:inputType="text"
-                            android:text="-특제 소스와 함께 더 맛있어요" />
+                            android:text="-egg와 함께 더 맛있어요" />
 
                     </LinearLayout>
 
@@ -646,7 +646,7 @@
                         android:background="@null"
                         android:ems="10"
                         android:inputType="text"
-                        android:text="-특제 소스와 함께 더 맛있어요" />
+                        android:text="-손수 만든 김치와 함께 더 맛있어요" />
                 </LinearLayout>
 
             </LinearLayout>
