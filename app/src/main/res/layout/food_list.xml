@@ -25,6 +25,11 @@
                 android:layout_height="327dp"
                 android:layout_marginTop="24dp">
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/ganajumbo"/>
+
                 <ImageButton
                     android:id="@+id/cancel_arrow_back01"
                     android:layout_width="50dp"
