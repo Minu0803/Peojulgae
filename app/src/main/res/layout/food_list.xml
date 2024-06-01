@@ -46,7 +46,7 @@
 
             </RelativeLayout>
 
-            <FrameLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
@@ -165,9 +165,9 @@
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-            </FrameLayout>
+            </LinearLayout>
 
-            <FrameLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="24dp"
@@ -235,7 +235,7 @@
 
                             <TextView
                                 android:id="@+id/textView23"
-                                android:layout_width="wrap_content"
+                                android:layout_width="98dp"
                                 android:layout_height="37dp"
                                 android:layout_weight="1"
                                 android:text="+700원"
@@ -405,7 +405,7 @@
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-            </FrameLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
