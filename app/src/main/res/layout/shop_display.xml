@@ -101,6 +101,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@null"
+                        android:gravity="center"
                         android:drawableStart="@drawable/drawble_resize_heart"
                         android:drawablePadding="4dp"
                         android:ems="10"
@@ -109,8 +110,8 @@
 
                     <ImageView
                         android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent"
                         android:layout_weight="0.9"
                         app:srcCompat="@drawable/arrow_right" />
 
