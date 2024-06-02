@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/take_pay"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:id="@+id/have_scrollView"
@@ -235,89 +234,6 @@
                         android:layout_gravity="center"
                         android:text="직접 입력하기" />
 
-                </LinearLayout>
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="165dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/pay_edit_round">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/have_text10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginStart="8dp"
-                        android:text="결제 수단"
-                        android:textSize="16dp"
-                        android:textStyle="bold"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-
-                        <RadioGroup
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp">
-
-                            <RadioButton
-                                android:id="@+id/have_pay_radio01"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_marginTop="8dp"
-                                android:text="카카오 페이" />
-
-                            <RadioButton
-                                android:id="@+id/have_pay_radio02"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_marginTop="8dp"
-                                android:text="네이버 페이" />
-
-                            <RadioButton
-                                android:id="@+id/have_pay_radio03"
-                                android:layout_width="wrap_content"
-                                android:layout_height="25dp"
-                                android:layout_marginTop="8dp"
-                                android:text="기타 결제수단" />
-
-                        </RadioGroup>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/have_pay_kakao"
-                                android:layout_width="50dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="3dp"
-                                app:srcCompat="@drawable/kakaopay" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/have_text11"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="5dp"
-                        android:text="* 카드 혜택 보기"
-                        android:textColor="@color/darkgrey02"/>
                 </LinearLayout>
             </FrameLayout>
 
