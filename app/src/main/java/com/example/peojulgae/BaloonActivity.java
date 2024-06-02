@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-public class BaloonActivity extends AppCompatActivity {
+public class BaloonActivity extends AppCompatActivity { // storedisplay의 동작
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +22,7 @@ public class BaloonActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // FoodListActivity 시작
-                Intent intent = new Intent(BaloonActivity.this, StoretoFood.class);
+                Intent intent = new Intent(BaloonActivity.this, FoodListActivity.class);
                 startActivity(intent);
             }
         });

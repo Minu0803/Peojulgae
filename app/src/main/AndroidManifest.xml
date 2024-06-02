@@ -44,7 +44,7 @@
 
         </activity>
 
-        <activity android:name=".StoretoFood"></activity>
+        <activity android:name=".FoodListActivity"></activity>
 
         <meta-data
             android:name="com.kakao.vectormap.APP_KEY"
