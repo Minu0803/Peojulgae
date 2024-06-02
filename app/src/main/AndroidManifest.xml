@@ -34,7 +34,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BaloonActivity"></activity>
+
+        <activity android:name=".BaloonActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".StoretoFood"></activity>
 
         <meta-data
             android:name="com.kakao.vectormap.APP_KEY"
