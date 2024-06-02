@@ -88,7 +88,8 @@ dependencies {
     implementation (libs.logging.interceptor)
     implementation (libs.lottie)
 
-
+    implementation ("io.github.bootpay:android:4.4.3")
+    implementation ("io.github.bootpay:android-bio:4.4.21")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
