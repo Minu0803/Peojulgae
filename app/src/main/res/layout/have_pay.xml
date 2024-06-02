@@ -620,7 +620,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/have_button"
+                android:id="@+id/have_pay_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
