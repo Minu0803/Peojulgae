@@ -8,6 +8,6 @@ public class BaloonActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.food_list);
+        setContentView(R.layout.store_display);
     }
 }
