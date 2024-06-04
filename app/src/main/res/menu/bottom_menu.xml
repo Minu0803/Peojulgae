@@ -12,6 +12,11 @@
         android:enabled="true"
         android:icon="@drawable/category" />
     <item
+        android:id="@+id/fragment_GPS"
+        android:title="지도"
+        android:enabled="true"
+        android:icon="@drawable/gps" />
+    <item
         android:id="@+id/fragment_mart"
         android:title="마트"
         android:enabled="true"
