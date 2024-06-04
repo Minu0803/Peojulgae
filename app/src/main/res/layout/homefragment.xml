@@ -59,7 +59,7 @@
                     <androidx.appcompat.widget.SearchView
                         android:id="@+id/search"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_height="60dp"
                         android:focusable="true"
                         android:padding="20dp"
                         app:iconifiedByDefault="false"
@@ -67,14 +67,14 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_weight="1"
-                        app:queryHint="검색어를 입력하시오" />
+                        app:queryHint="검색어를 입력하세요" />
 
 
                 </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="80dp"
                     android:background="@drawable/banner_background"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
@@ -134,7 +134,7 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:autoStart="true"
-                    android:flipInterval="2000"
+                    android:flipInterval="2400"
                     android:inAnimation="@android:anim/slide_in_left"
                     android:outAnimation="@android:anim/slide_out_right"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -143,12 +143,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.209">
-
-                    <ImageView
-                        android:id="@+id/imageView16"
-                        android:layout_width="400dp"
-                        android:layout_height="wrap_content"
-                        tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
 
                     <ImageView
                         android:id="@+id/imageView17"
@@ -191,14 +185,44 @@
 
                 </LinearLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:id="@+id/view2"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:clipToPadding="false"
-                    />
+                <ViewFlipper
+                    android:id="@+id/viewFlipper2"
+                    android:layout_width="383dp"
+                    android:layout_height="108dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:autoStart="true"
+                    android:flipInterval="2500"
+                    android:inAnimation="@android:anim/slide_in_left"
+                    android:outAnimation="@android:anim/slide_out_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.666"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.209">
+
+                    <ImageView
+                        android:id="@+id/imageView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/modurang" />
+
+                    <ImageView
+                        android:id="@+id/imageView22"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ghanadon" />
+
+                    <ImageView
+                        android:id="@+id/imageView23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ggo" />
+
+                </ViewFlipper>
 
 
             </LinearLayout>
