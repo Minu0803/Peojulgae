@@ -193,7 +193,7 @@ public class Frag5 extends Fragment implements KakaoMap.OnLabelClickListener {
         LabelLayer layer = kakaoMap.getLabelManager().getLayer();
 
         // 첫번째 마커 찍기
-        LatLng position1 = LatLng.from(37.5866169, 127.0977436); // "가나 점보 돈까스"
+        LatLng position1 = LatLng.from(37.588145, 127.096791); // "가나 점보 돈까스"
         Label marker1 = layer.addLabel(LabelOptions.from("specificMarker1", position1)
                 .setStyles(LabelStyle.from(R.drawable.red_marker).setAnchorPoint(0.5f, 0.5f))
                 .setRank(1));
