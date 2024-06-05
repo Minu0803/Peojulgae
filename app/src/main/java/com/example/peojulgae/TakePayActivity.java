@@ -42,16 +42,12 @@ public class TakePayActivity extends AppCompatActivity {
                 .setCardQuota("0,2,3"); // 일시불, 2개월, 3개월 할부 허용, 할부는 최대 12개월까지 사용됨 (5만원 이상 구매시 할부허용 범위)
 
         List<BootItem> items = new ArrayList<>();
-        BootItem item1 = new BootItem().setName("마우스").setId("ITEM_CODE_MOUSE").setQty(1).setPrice(500d);
-        BootItem item2 = new BootItem().setName("키보드").setId("ITEM_KEYBOARD_MOUSE").setQty(1).setPrice(500d);
-        items.add(item1);
-        items.add(item2);
 
         Payload payload = new Payload();
         payload.setApplicationId("5b8f6a4d396fa665fdc2b5e8")
                 .setOrderName("Peojulgae 앱 결제")
                 .setOrderId("1234")
-                .setPrice(1000d)
+                .setPrice(24510d)
                 .setUser(user)
                 .setExtra(extra)
                 .setItems(items);
