@@ -188,6 +188,7 @@
                         android:layout_gravity="center">
 
                         <ImageView
+                            android:id="@+id/honeyapple"
                             android:layout_width="150dp"
                             android:layout_height="140dp"
                             android:src="@drawable/apple"
@@ -254,6 +255,7 @@
                         android:layout_gravity="center">
 
                         <ImageView
+                            android:id="@+id/watermelonimage"
                             android:layout_width="150dp"
                             android:layout_height="140dp"
                             android:src="@drawable/watermelon"
@@ -314,6 +316,7 @@
                         app:cardCornerRadius="8dp" >
 
                         <ImageView
+                            android:id="@+id/kiwiimage"
                             android:layout_width="150dp"
                             android:layout_height="140dp"
                             android:src="@drawable/kiwi"
@@ -380,6 +383,7 @@
                         android:layout_gravity="center">
 
                         <ImageView
+                            android:id="@+id/shinemuscatimage"
                             android:layout_width="150dp"
                             android:layout_height="140dp"
                             android:src="@drawable/shine_muscat"
@@ -440,6 +444,7 @@
                         android:layout_gravity="center">
 
                         <ImageView
+                            android:id="@+id/mangoimage"
                             android:layout_width="150dp"
                             android:layout_height="140dp"
                             android:src="@drawable/mango"

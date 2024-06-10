@@ -68,7 +68,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:textSize="16sp"
-                            android:text="서일대 근처 최고의 가성비 맛집!"
+                            android:text="서일대 근처 최고의 마트 할인점!"
                             android:textStyle="italic"/>
 
                         <LinearLayout
@@ -88,7 +88,7 @@
                                 android:layout_width="184dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="1개당 금액: "
+                                android:text="박스당 금액: "
                                 android:layout_marginEnd="8dp"
                                 android:textSize="15sp"
                                 android:gravity="end"/>
