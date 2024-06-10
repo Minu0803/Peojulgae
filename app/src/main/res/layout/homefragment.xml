@@ -146,23 +146,29 @@
 
                     <ImageView
                         android:id="@+id/imageView17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="383dp"
+                        android:layout_height="108dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/round_corner"
+                        android:clipToOutline="true"
                         app:srcCompat="@mipmap/three" />
 
                     <ImageView
                         android:id="@+id/imageView18"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="383dp"
+                        android:layout_height="108dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/round_corner"
+                        android:clipToOutline="true"
                         app:srcCompat="@mipmap/with_everyone" />
 
                     <ImageView
                         android:id="@+id/imageView19"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="383dp"
+                        android:layout_height="108dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/round_corner"
+                        android:clipToOutline="true"
                         app:srcCompat="@mipmap/two" />
 
                 </ViewFlipper>
@@ -209,23 +215,29 @@
 
                     <ImageView
                         android:id="@+id/imageView21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="383dp"
+                        android:layout_height="108dp"
+                        android:background="@drawable/round_corner"
+                        android:clipToOutline="true"
+                        android:scaleType="fitXY"
                         app:srcCompat="@mipmap/modurang" />
 
                     <ImageView
                         android:id="@+id/imageView22"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="383dp"
+                        android:layout_height="108dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/round_corner"
+                        android:clipToOutline="true"
                         app:srcCompat="@mipmap/ghanadon" />
 
                     <ImageView
                         android:id="@+id/imageView23"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_width="383dp"
+                        android:layout_height="108dp"
+                        android:scaleType="fitXY"
+                        android:background="@drawable/round_corner"
+                        android:clipToOutline="true"
                         app:srcCompat="@mipmap/ggo" />
 
                 </ViewFlipper>

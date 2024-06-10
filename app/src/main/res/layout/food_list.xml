@@ -21,9 +21,16 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="215dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_width="380dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/round_corner"
+                android:clipToOutline="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/food_ganajumbo" />
 
             <FrameLayout
                 android:layout_width="match_parent"
