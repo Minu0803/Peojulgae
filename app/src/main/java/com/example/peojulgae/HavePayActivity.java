@@ -48,7 +48,7 @@ public class HavePayActivity extends AppCompatActivity {
         payload.setApplicationId("5b8f6a4d396fa665fdc2b5e8")
                 .setOrderName("Peojulgae 앱 결제")
                 .setOrderId("1234")
-                .setPrice(24510d)
+                .setPrice(7500d)
                 .setUser(user)
                 .setExtra(extra)
                 .setItems(items);

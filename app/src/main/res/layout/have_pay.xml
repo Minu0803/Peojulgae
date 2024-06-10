@@ -441,7 +441,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="20dp"
                             android:layout_weight="0"
-                            android:text="24,510 원"
+                            android:text="7,500 원"
                             android:textSize="25dp" />
 
                     </LinearLayout>
@@ -511,7 +511,7 @@
                                 android:id="@+id/have_text24"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="-1000원"
+                                android:text="-750"
                                 android:textSize="20dp"
                                 android:textColor="@color/red"
                                 android:textStyle="bold"/>
@@ -521,7 +521,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
-                                android:text="-2000원"
+                                android:text="-0원"
                                 android:textSize="20dp"
                                 android:textColor="@color/red"
                                 android:textStyle="bold"/>
@@ -531,7 +531,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="24dp"
-                                android:text="-3000원"
+                                android:text="-750원"
                                 android:textSize="20dp"
                                 android:textColor="@color/red"
                                 android:textStyle="bold"/>

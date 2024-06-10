@@ -157,6 +157,7 @@
                         app:cardCornerRadius="15dp">
 
                         <ImageView
+                            android:id="@+id/normaldonggas"
                             android:layout_width="160dp"
                             android:layout_height="150dp"
                             android:src="@drawable/store_gana"
@@ -282,6 +283,7 @@
                         app:cardCornerRadius="15dp">
 
                         <ImageView
+                            android:id="@+id/cheesedonggas"
                             android:layout_width="160dp"
                             android:layout_height="150dp"
                             android:src="@drawable/cheese"
@@ -425,6 +427,7 @@
                         app:cardCornerRadius="15dp">
 
                         <ImageView
+                            android:id="@+id/eggdongas"
                             android:layout_width="160dp"
                             android:layout_height="150dp"
                             android:src="@drawable/egg_ganajumbo"
@@ -547,6 +550,7 @@
                         app:cardCornerRadius="15dp">
 
                         <ImageView
+                            android:id="@+id/eggcheese"
                             android:layout_width="160dp"
                             android:layout_height="150dp"
                             android:src="@drawable/cheese2"
@@ -690,11 +694,12 @@
                         app:cardCornerRadius="15dp">
 
                         <ImageView
+                            android:id="@+id/Mulnaengmyeon"
                             android:layout_width="160dp"
                             android:layout_height="150dp"
-                            android:src="@drawable/weter"
                             android:clipToOutline="true"
-                            android:scaleType="fitXY">
+                            android:scaleType="fitXY"
+                            android:src="@drawable/weter">
 
                         </ImageView>
                     </androidx.cardview.widget.CardView>
@@ -878,16 +883,7 @@
 
             </FrameLayout>
 
-            <Button
-                android:id="@+id/store_dbutton01"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="@color/grey"
-                android:text="장바구니 확인하기" />
+
 
 
         </LinearLayout>
