@@ -216,7 +216,7 @@
                     <ImageView
                         android:id="@+id/imageView21"
                         android:layout_width="match_parent"
-                        android:layout_height="108dp"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/round_corner"
                         android:clipToOutline="true"
                         android:scaleType="fitXY"
