@@ -456,7 +456,7 @@
                         android:layout_marginStart="12dp"
                         android:layout_marginEnd="12dp"
                         android:gravity="center"
-                        android:text="꿀 부사 사과" />
+                        android:text="망고" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
