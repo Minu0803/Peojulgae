@@ -58,6 +58,8 @@
         <activity android:name=".TakePayActivity"></activity>
         <activity android:name=".HavePayActivity"></activity>
         <activity android:name=".FoodCategoryActivity"></activity>
+        <activity android:name=".MartSpecific"></activity>
+
 
 
 

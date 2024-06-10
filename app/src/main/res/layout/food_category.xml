@@ -119,6 +119,7 @@
                         android:layout_gravity="center">
 
                         <ImageView
+                            android:id="@+id/peachimage"
                             android:layout_width="150dp"
                             android:layout_height="140dp"
                             android:src="@drawable/peach"
