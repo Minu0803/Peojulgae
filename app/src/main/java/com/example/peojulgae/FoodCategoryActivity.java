@@ -48,7 +48,7 @@ public class FoodCategoryActivity extends AppCompatActivity {
                 Intent intent = new Intent(FoodCategoryActivity.this, MartSpecific.class);
                 intent.putExtra("image_resource", R.drawable.watermelon);
                 intent.putExtra("item_name", "수박");
-                intent.putExtra("item_price", "40,00원");
+                intent.putExtra("item_price", "40,000원");
                 startActivity(intent);
             }
         });
@@ -58,7 +58,7 @@ public class FoodCategoryActivity extends AppCompatActivity {
                 Intent intent = new Intent(FoodCategoryActivity.this, MartSpecific.class);
                 intent.putExtra("image_resource", R.drawable.kiwi);
                 intent.putExtra("item_name", "키위");
-                intent.putExtra("item_price", "25,00원");
+                intent.putExtra("item_price", "25,000원");
                 startActivity(intent);
             }
         });
@@ -69,7 +69,7 @@ public class FoodCategoryActivity extends AppCompatActivity {
                 Intent intent = new Intent(FoodCategoryActivity.this, MartSpecific.class);
                 intent.putExtra("image_resource", R.drawable.shine_muscat);
                 intent.putExtra("item_name", "샤인머스캣");
-                intent.putExtra("item_price", "40,00원");
+                intent.putExtra("item_price", "40,000원");
                 startActivity(intent);
             }
         });
