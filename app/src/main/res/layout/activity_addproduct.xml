@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/foodName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="음식명" />
+
+        <Button
+            android:id="@+id/selectFoodPhotosButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="사진 선택 (최소 3장)" />
+
+        <TextView
+            android:id="@+id/selectedFoodPhotosText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="선택된 사진 없음"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/selectMainImageButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="메인 이미지 선택" />
+
+        <EditText
+            android:id="@+id/foodPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="가격" />
+
+        <TextView
+            android:id="@+id/discountText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="할인율: 0%"
+            android:padding="8dp" />
+
+        <SeekBar
+            android:id="@+id/discountSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100" />
+
+        <TextView
+            android:id="@+id/quantityText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="수량: 1"
+            android:padding="8dp" />
+
+        <SeekBar
+            android:id="@+id/quantitySeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100" />
+
+        <EditText
+            android:id="@+id/foodDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="음식에 대한 간략 설명" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="카테고리 선택"
+            android:textSize="18sp"
+            android:paddingTop="16dp" />
+
+        <CheckBox
+            android:id="@+id/categoryPizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="피자" />
+
+        <CheckBox
+            android:id="@+id/categoryChicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="치킨" />
+
+        <CheckBox
+            android:id="@+id/categoryDessert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="디저트" />
+
+        <CheckBox
+            android:id="@+id/categoryDrink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="음료" />
+
+        <CheckBox
+            android:id="@+id/categorySnack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="분식" />
+
+        <CheckBox
+            android:id="@+id/categoryJapanese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="일식" />
+
+        <CheckBox
+            android:id="@+id/categoryChinese"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="중식" />
+
+        <CheckBox
+            android:id="@+id/categoryKorean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="한식" />
+
+        <Button
+            android:id="@+id/registerFoodButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="음식 등록"
+            android:paddingTop="16dp" />
+    </LinearLayout>
+</ScrollView>
