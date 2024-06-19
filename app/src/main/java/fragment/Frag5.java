@@ -66,7 +66,7 @@ public class Frag5 extends Fragment implements KakaoMap.OnLabelClickListener {
             kakaoMap = map;
             LabelLayer layer = kakaoMap.getLabelManager().getLayer();
             centerLabel = layer.addLabel(LabelOptions.from("centerLabel", startPosition)
-                    .setStyles(LabelStyle.from(R.drawable.red_marker).setAnchorPoint(0.5f, 0.5f))
+                    .setStyles(LabelStyle.from(R.drawable.mylocation).setAnchorPoint(0.5f, 0.5f))
                     .setRank(1));
             TrackingManager trackingManager = kakaoMap.getTrackingManager();
             trackingManager.startTracking(centerLabel);
