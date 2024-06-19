@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -22,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +64,7 @@ public class EditproductActivity extends AppCompatActivity {
                     Food food = productSnapshot.getValue(Food.class);
                     if (food != null) {
                         productList.add(food);
-                        addProductView(food);
+                        addProductView(food, productSnapshot.getKey()); // pass the foodId
                     }
                 }
             }
@@ -74,7 +76,7 @@ public class EditproductActivity extends AppCompatActivity {
         });
     }
 
-    private void addProductView(Food food) {
+    private void addProductView(Food food, String foodId) {
         View productView = LayoutInflater.from(this).inflate(R.layout.item_food_edit, productListLayout, false);
 
         TextView foodName = productView.findViewById(R.id.food_name);
@@ -94,24 +96,21 @@ public class EditproductActivity extends AppCompatActivity {
 
         Glide.with(this).load(food.getImageUrl()).into(foodImage);
 
-        editButton.setOnClickListener(v -> openEditActivity(food));
-        deleteButton.setOnClickListener(v -> {
-            deleteFood(food.getFoodId());
-            productListLayout.removeView(productView); // UI에서 항목 제거
-        });
+        editButton.setOnClickListener(v -> openEditActivity(foodId));
+        deleteButton.setOnClickListener(v -> deleteFood(foodId));
 
         productListLayout.addView(productView);
     }
 
-    private void openEditActivity(Food food) {
+    private void openEditActivity(String foodId) {
         Intent intent = new Intent(this, EditActivity.class);
-        intent.putExtra("foodId", food.getFoodId());
-        startActivityForResult(intent, 1); // Request code 1 for identifying the result
+        intent.putExtra("foodId", foodId);
+        startActivity(intent);
     }
 
     private void deleteFood(String foodId) {
-        DatabaseReference foodRef = FirebaseDatabase.getInstance().getReference("Foods").child(foodId);
-        foodRef.removeValue().addOnCompleteListener(task -> {
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Foods").child(foodId);
+        dbRef.removeValue().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 Toast.makeText(this, "음식이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
                 loadProducts(); // 삭제 후 목록 갱신
@@ -119,13 +118,5 @@ public class EditproductActivity extends AppCompatActivity {
                 Toast.makeText(this, "음식 삭제 실패: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 && resultCode == RESULT_OK) {
-            loadProducts(); // 수정 후 목록 갱신
-        }
     }
 }

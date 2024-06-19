@@ -39,13 +39,6 @@ public class EditActivity extends AppCompatActivity {
         saveButton = findViewById(R.id.btn_save);
 
         foodId = getIntent().getStringExtra("foodId");
-
-        if (foodId == null || foodId.isEmpty()) {
-            Toast.makeText(this, "음식 ID가 유효하지 않습니다.", Toast.LENGTH_SHORT).show();
-            finish();
-            return;
-        }
-
         dbRef = FirebaseDatabase.getInstance().getReference("Foods").child(foodId);
 
         loadFoodDetails();
@@ -93,7 +86,6 @@ public class EditActivity extends AppCompatActivity {
         dbRef.setValue(updatedFood).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 Toast.makeText(this, "음식 정보가 수정되었습니다.", Toast.LENGTH_SHORT).show();
-                setResult(RESULT_OK); // Result OK to indicate the change
                 finish(); // 액티비티 종료하여 이전 화면으로 돌아감
             } else {
                 Toast.makeText(this, "음식 정보 수정 실패: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
