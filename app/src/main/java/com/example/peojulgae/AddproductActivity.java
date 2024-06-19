@@ -111,10 +111,12 @@ public class AddproductActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) { }
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) { }
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
         });
 
         quantitySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -125,10 +127,12 @@ public class AddproductActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) { }
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) { }
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
         });
     }
 
@@ -202,6 +206,7 @@ public class AddproductActivity extends AppCompatActivity {
         if (!photoUris.isEmpty()) {
             final List<String> photoUrls = new ArrayList<>();
             StorageReference storageRef = storage.getReference().child("food_photos").child(foodRef.getKey());
+            Log.d(TAG, "Storage Reference Path: " + storageRef.getPath());
 
             for (Uri uri : photoUris) {
                 final StorageReference photoRef = storageRef.child(uri.getLastPathSegment());
@@ -302,3 +307,4 @@ public class AddproductActivity extends AppCompatActivity {
                 });
     }
 }
+
