@@ -34,10 +34,8 @@
             android:exported="false"/>
         <activity android:name=".AddrestaurantActivity"
             android:exported="false"/>
-        <activity android:name=".EditproductActivity"
-            android:exported="false"/>
-        <activity android:name=".RegisterActivity"
-            android:exported="false"/>
+        <activity android:name=".EditActivity" />
+        <activity android:name=".EditproductActivity" />
 
 
         <activity
