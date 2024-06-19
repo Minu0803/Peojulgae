@@ -6,33 +6,52 @@
     android:padding="8dp">
 
     <ImageView
-        android:id="@+id/foodImageView"
+        android:id="@+id/food_image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="Food Image" />
+        android:scaleType="centerCrop" />
 
     <TextView
-        android:id="@+id/foodNameTextView"
+        android:id="@+id/food_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Food Name"
+        android:text="음식명"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:paddingTop="4dp" />
 
     <TextView
-        android:id="@+id/foodPriceTextView"
+        android:id="@+id/food_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Food Price"
-        android:textSize="16sp" />
+        android:text="설명"
+        android:textSize="14sp"
+        android:paddingTop="4dp" />
 
     <TextView
-        android:id="@+id/foodDiscountTextView"
+        android:id="@+id/food_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Discount"
+        android:text="가격"
         android:textSize="16sp"
-        android:textColor="#FF0000" /> <!-- 할인율을 강조하는 색상 -->
+        android:textStyle="bold"
+        android:paddingTop="4dp" />
+
+    <TextView
+        android:id="@+id/food_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="할인율"
+        android:textSize="16sp"
+        android:paddingTop="4dp"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/food_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="수량"
+        android:textSize="16sp"
+        android:paddingTop="4dp" />
 
 </LinearLayout>

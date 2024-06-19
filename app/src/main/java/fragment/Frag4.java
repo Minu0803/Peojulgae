@@ -11,12 +11,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.peojulgae.AddmartActivity;
+import com.example.peojulgae.AddproductActivity;
+import com.example.peojulgae.AddrestaurantActivity;
+import com.example.peojulgae.EditproductActivity;
 import com.example.peojulgae.R;
 import com.example.peojulgae.RegisterActivity;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,13 +37,15 @@ import com.google.firebase.database.ValueEventListener;
 import java.io.IOException;
 
 public class Frag4 extends Fragment {
+
     private static final int PICK_IMAGE_REQUEST = 1;
     private View view;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-    private Button loginButton, registerButton, logoutButton;
+    private Button loginButton, registerButton, logoutButton, addrestaurantButton, addmartButton;
+    private ImageButton addButton, editButton;
     private EditText emailEditText, passwordEditText;
-    private ImageView profileImageView;
+    private ImageView profileImageView, profile_sellerImageView1;
     private LinearLayout loginLayout, buyerLayout, sellerLayout;
 
     @Nullable
@@ -48,23 +57,45 @@ public class Frag4 extends Fragment {
         mDatabase = FirebaseDatabase.getInstance().getReference("users");
 
         profileImageView = view.findViewById(R.id.profile_ImageView);
+        profile_sellerImageView1 = view.findViewById(R.id.profile_sellerImageView1);
         loginButton = view.findViewById(R.id.login_Button);
         registerButton = view.findViewById(R.id.register_Button);
         emailEditText = view.findViewById(R.id.email_edittext);
         passwordEditText = view.findViewById(R.id.password_edittext);
         logoutButton = view.findViewById(R.id.logout_Button);
+        addButton = view.findViewById(R.id.add);
+        editButton = view.findViewById(R.id.edit);
+        addrestaurantButton = view.findViewById(R.id.restaurant);
+        addmartButton = view.findViewById(R.id.mart);
         loginLayout = view.findViewById(R.id.login_layout);
         buyerLayout = view.findViewById(R.id.buyer_layout);
         sellerLayout = view.findViewById(R.id.seller_layout);
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        //사용자가 로그인이 안되어있을때 로그인 화면 보여줌
+        // 사용자가 로그인이 안되어있을때 로그인 화면 보여줌
         if (currentUser == null) {
             showLoginLayout();
-            //로그인이 되어있으면 역할에 맞게 레이아웃 보여주기
         } else {
             showUserLayout(currentUser);
         }
+
+        addButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), AddproductActivity.class);
+            startActivity(intent);
+        });
+
+        editButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), EditproductActivity.class);
+            startActivity(intent);
+        });
+        addrestaurantButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), AddrestaurantActivity.class);
+            startActivity(intent);
+        });
+        addmartButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), AddmartActivity.class);
+            startActivity(intent);
+        });
 
         return view;
     }
@@ -72,10 +103,10 @@ public class Frag4 extends Fragment {
     private void showLoginLayout() {
         loginLayout.setVisibility(View.VISIBLE);
         profileImageView.setVisibility(View.GONE);
+        profile_sellerImageView1.setVisibility(View.GONE);
         buyerLayout.setVisibility(View.GONE);
         sellerLayout.setVisibility(View.GONE);
         logoutButton.setVisibility(View.GONE);
-
         loginButton.setOnClickListener(v -> loginUser());
 
         registerButton.setOnClickListener(v -> {
@@ -89,10 +120,11 @@ public class Frag4 extends Fragment {
         loginLayout.setVisibility(View.GONE);
         logoutButton.setVisibility(View.VISIBLE);
         profileImageView.setVisibility(View.VISIBLE);
-
+        profile_sellerImageView1.setVisibility(View.VISIBLE);
         checkUserRole(currentUser.getUid());
 
         profileImageView.setOnClickListener(v -> openFileChooser());
+        profile_sellerImageView1.setOnClickListener(v -> openFileChooser());
 
         logoutButton.setOnClickListener(v -> {
             mAuth.signOut();
@@ -130,7 +162,12 @@ public class Frag4 extends Fragment {
                     if ("buyer".equals(role)) {
                         showBuyerUI();
                     } else if ("seller".equals(role)) {
-                        showSellerUI();
+                        String restaurantId = snapshot.child("restaurantId").getValue(String.class);
+                        if (restaurantId != null) {
+                            showSellerUI(restaurantId);
+                        } else {
+                            showSellerUI(null);
+                        }
                     }
                 } else {
                     Toast.makeText(getActivity(), "사용자 정보를 찾을 수 없습니다.", Toast.LENGTH_SHORT).show();
@@ -147,31 +184,18 @@ public class Frag4 extends Fragment {
     private void showBuyerUI() {
         buyerLayout.setVisibility(View.VISIBLE);
         sellerLayout.setVisibility(View.GONE);
-        // 추가적으로 구매자용 UI 초기화
-        //ex) loadPurchasedItems();
-        //ex) loadFavoriteItems();
     }
 
-    private void showSellerUI() {
+    private void showSellerUI(String restaurantId) {
         buyerLayout.setVisibility(View.GONE);
         sellerLayout.setVisibility(View.VISIBLE);
-        // 추가적으로 판매자용 UI 초기화
-        //ex)loadSoldItems();
-    }
-
-    private void loadPurchasedItems() {
-        // ex) Firebase에서 구매한 상품 목록 로드
-
-    }
-
-    private void loadFavoriteItems() {
-        // ex) Firebase에서 즐겨찾기 목록 로드
-
-    }
-
-    private void loadSoldItems() {
-        // ex) Firebase에서 판매한 상품 목록 로드
-
+        if (restaurantId != null) {
+            addButton.setOnClickListener(v -> {
+                Intent intent = new Intent(getActivity(), com.example.peojulgae.AddproductActivity.class);
+                intent.putExtra("restaurantId", restaurantId);
+                startActivity(intent);
+            });
+        }
     }
 
     private void openFileChooser() {

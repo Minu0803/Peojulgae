@@ -27,6 +27,19 @@
             android:name=".RegisterActivity"
             android:exported="false" />
 
+        <activity android:name=".AddproductActivity"
+            android:exported="false"/>
+
+        <activity android:name=".AddmartActivity"
+            android:exported="false"/>
+        <activity android:name=".AddrestaurantActivity"
+            android:exported="false"/>
+        <activity android:name=".EditproductActivity"
+            android:exported="false"/>
+        <activity android:name=".RegisterActivity"
+            android:exported="false"/>
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

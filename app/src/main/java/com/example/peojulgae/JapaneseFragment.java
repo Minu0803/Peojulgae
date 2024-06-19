@@ -15,30 +15,33 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class JapaneseFragment extends Fragment {
 
-    private RecyclerView recyclerView;
+    private RecyclerView categoryItemsRecyclerView;
     private FoodAdapter foodAdapter;
     private List<Food> foodList;
+    private List<Food> filteredFoodList;
     private DatabaseReference dbRef;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_japanese_fragment, container, false);
+        View view = inflater.inflate(R.layout.activity_japanese_fragment, container, false);  // Ensure this matches your layout file name
 
-        recyclerView = view.findViewById(R.id.japaneseRecyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        categoryItemsRecyclerView = view.findViewById(R.id.japaneseRecyclerView);
+        categoryItemsRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
         foodList = new ArrayList<>();
-        foodAdapter = new FoodAdapter(foodList);
-        recyclerView.setAdapter(foodAdapter);
+        filteredFoodList = new ArrayList<>();
+        foodAdapter = new FoodAdapter(filteredFoodList, getContext());
 
-        dbRef = FirebaseDatabase.getInstance().getReference("Categories").child("일식");
+        // 어댑터를 RecyclerView에 설정
+        categoryItemsRecyclerView.setAdapter(foodAdapter);
+
+        dbRef = FirebaseDatabase.getInstance().getReference("Foods");
 
         loadFoods();
 
@@ -52,8 +55,12 @@ public class JapaneseFragment extends Fragment {
                 foodList.clear();
                 for (DataSnapshot foodSnapshot : snapshot.getChildren()) {
                     Food food = foodSnapshot.getValue(Food.class);
-                    foodList.add(food);
+                    if (food != null && food.getCategories().contains("일식")) {
+                        foodList.add(food);
+                    }
                 }
+                filteredFoodList.clear();
+                filteredFoodList.addAll(foodList);
                 foodAdapter.notifyDataSetChanged();
             }
 

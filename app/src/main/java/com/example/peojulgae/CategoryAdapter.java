@@ -1,28 +1,23 @@
 package com.example.peojulgae;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
-    public interface OnItemClickListener {
-        void onItemClick(Category category);
-    }
-
     private List<Category> categoryList;
-    private OnItemClickListener listener;
+    private Context context;
+    private OnCategoryClickListener listener;
 
-    public CategoryAdapter(List<Category> categoryList, OnItemClickListener listener) {
+    public CategoryAdapter(List<Category> categoryList, Context context, OnCategoryClickListener listener) {
         this.categoryList = categoryList;
+        this.context = context;
         this.listener = listener;
     }
 
@@ -37,7 +32,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
         Category category = categoryList.get(position);
         holder.categoryName.setText(category.getName());
-        holder.itemView.setOnClickListener(v -> listener.onItemClick(category));
+        holder.itemView.setOnClickListener(v -> listener.onCategoryClick(category));
     }
 
     @Override
@@ -46,7 +41,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     }
 
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
-        public TextView categoryName;
+        TextView categoryName;
 
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);

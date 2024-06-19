@@ -4,146 +4,91 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseExpandableListAdapter;
-import android.widget.ExpandableListView;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.example.peojulgae.Category;
+import com.example.peojulgae.CategoryAdapter;
+import com.example.peojulgae.CategoryItemsFragment;
+import com.example.peojulgae.ChickenFragment;
+import com.example.peojulgae.ChineseFragment;
+import com.example.peojulgae.DessertFragment;
+import com.example.peojulgae.DrinkFragment;
+import com.example.peojulgae.JapaneseFragment;
+import com.example.peojulgae.KoreanFragment;
+import com.example.peojulgae.PizzaFragment;
 import com.example.peojulgae.R;
+import com.example.peojulgae.SnackFragment;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Frag2 extends Fragment {
 
-    private View view;
-    private ExpandableListView expandableListView;
-    private ExpandableAdapter expandableAdapter;
-    private HashMap<String, List<String>> categoryItemMap;
+    private RecyclerView categoryRecyclerView;
+    private CategoryAdapter categoryAdapter;
+    private List<Category> categoryList;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.category_activity, container, false);
+        View view = inflater.inflate(R.layout.categoryfragment, container, false);
 
-        expandableListView = view.findViewById(R.id.eListView);
-        categoryItemMap = new HashMap<>();
+        categoryRecyclerView = view.findViewById(R.id.categoryRecyclerView);
+        categoryRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        initializeData();
+        categoryList = new ArrayList<>();
+        categoryList.add(new Category("피자"));
+        categoryList.add(new Category("치킨"));
+        categoryList.add(new Category("디저트"));
+        categoryList.add(new Category("음료"));
+        categoryList.add(new Category("분식"));
+        categoryList.add(new Category("일식"));
+        categoryList.add(new Category("중식"));
+        categoryList.add(new Category("한식"));
 
-        expandableAdapter = new ExpandableAdapter(categoryItemMap);
-        expandableListView.setAdapter(expandableAdapter);
+        categoryAdapter = new CategoryAdapter(categoryList, getContext(), category -> openCategoryFragment(category.getName()));
+        categoryRecyclerView.setAdapter(categoryAdapter);
 
         return view;
     }
 
-    private void initializeData() {
-        // Adding items for each category
-        List<String> koreanItems = new ArrayList<>();
-        koreanItems.add("본죽");
-        koreanItems.add("김밥천국");
-
-        List<String> chineseItems = new ArrayList<>();
-        chineseItems.add("홍콩반점");
-        chineseItems.add("오한수우육면가");
-        chineseItems.add("8월의 중식");
-        chineseItems.add("우동");
-        chineseItems.add("춘리마라탕");
-
-        List<String> westernItems = new ArrayList<>();
-        westernItems.add("스테이크");
-
-        List<String> dessertItems = new ArrayList<>();
-        // Add dessert items if any
-
-        List<String> drinksItems = new ArrayList<>();
-        // Add drink items if any
-
-        // Mapping categories to their respective items
-        categoryItemMap.put("한식", koreanItems);
-        categoryItemMap.put("중식", chineseItems);
-        categoryItemMap.put("양식", westernItems);
-        categoryItemMap.put("디저트", dessertItems);
-        categoryItemMap.put("음료", drinksItems);
-    }
-
-    // Adapter for ExpandableListView
-    public class ExpandableAdapter extends BaseExpandableListAdapter {
-
-        private final HashMap<String, List<String>> categoryItemMap;
-        private final List<String> categories;
-
-        public ExpandableAdapter(HashMap<String, List<String>> categoryItemMap) {
-            this.categoryItemMap = categoryItemMap;
-            this.categories = new ArrayList<>(categoryItemMap.keySet());
+    private void openCategoryFragment(String categoryName) {
+        Fragment fragment;
+        switch (categoryName) {
+            case "피자":
+                fragment = new PizzaFragment();
+                break;
+            case "치킨":
+                fragment = new ChickenFragment();
+                break;
+            case "디저트":
+                fragment = new DessertFragment();
+                break;
+            case "음료":
+                fragment = new DrinkFragment();
+                break;
+            case "분식":
+                fragment = new SnackFragment();
+                break;
+            case "일식":
+                fragment = new JapaneseFragment();
+                break;
+            case "중식":
+                fragment = new ChineseFragment();
+                break;
+            case "한식":
+                fragment = new KoreanFragment();
+                break;
+            default:
+                fragment = new CategoryItemsFragment(); // 기본 프래그먼트 설정
+                break;
         }
-
-        @Override
-        public int getGroupCount() {
-            return categories.size();
-        }
-
-        @Override
-        public int getChildrenCount(int groupPosition) {
-            return categoryItemMap.get(categories.get(groupPosition)).size();
-        }
-
-        @Override
-        public Object getGroup(int groupPosition) {
-            return categories.get(groupPosition);
-        }
-
-        @Override
-        public Object getChild(int groupPosition, int childPosition) {
-            return categoryItemMap.get(categories.get(groupPosition)).get(childPosition);
-        }
-
-        @Override
-        public long getGroupId(int groupPosition) {
-            return groupPosition;
-        }
-
-        @Override
-        public long getChildId(int groupPosition, int childPosition) {
-            return childPosition;
-        }
-
-        @Override
-        public boolean hasStableIds() {
-            return false;
-        }
-
-        @Override
-        public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-            String categoryTitle = (String) getGroup(groupPosition);
-            if (convertView == null) {
-                LayoutInflater inflater = LayoutInflater.from(getContext());
-                convertView = inflater.inflate(android.R.layout.simple_expandable_list_item_1, parent, false);
-            }
-            TextView textView = convertView.findViewById(android.R.id.text1);
-            textView.setText(categoryTitle);
-            return convertView;
-        }
-
-        @Override
-        public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-            String itemName = (String) getChild(groupPosition, childPosition);
-            if (convertView == null) {
-                LayoutInflater inflater = LayoutInflater.from(getContext());
-                convertView = inflater.inflate(android.R.layout.simple_list_item_1, parent, false);
-            }
-            TextView textView = convertView.findViewById(android.R.id.text1);
-            textView.setText(itemName);
-            return convertView;
-        }
-
-        @Override
-        public boolean isChildSelectable(int groupPosition, int childPosition) {
-            return true;
-        }
+        getParentFragmentManager().beginTransaction()
+                .replace(R.id.main_frame, fragment)
+                .addToBackStack(null)
+                .commit();
     }
 }

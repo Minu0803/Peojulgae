@@ -7,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,7 +26,6 @@ public class CategoryItemsFragment extends Fragment {
     private static final String ARG_CATEGORY = "category";
 
     private EditText searchEditText;
-    private LinearLayout categoryLinearLayout;
     private RecyclerView categoryItemsRecyclerView;
     private FoodAdapter foodAdapter;
     private List<Food> foodList;
@@ -62,13 +59,12 @@ public class CategoryItemsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_category_items, container, false);
 
         searchEditText = view.findViewById(R.id.searchEditText);
-        categoryLinearLayout = view.findViewById(R.id.categoryLinearLayout);
         categoryItemsRecyclerView = view.findViewById(R.id.categoryItemsRecyclerView);
         categoryItemsRecyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
         foodList = new ArrayList<>();
         filteredFoodList = new ArrayList<>();
-        foodAdapter = new FoodAdapter(filteredFoodList);
+        foodAdapter = new FoodAdapter(filteredFoodList, getContext());
 
         // 어댑터를 RecyclerView에 설정
         categoryItemsRecyclerView.setAdapter(foodAdapter);
@@ -77,7 +73,6 @@ public class CategoryItemsFragment extends Fragment {
 
         loadFoods();
         setupSearch();
-        setupCategories();
 
         return view;
     }
@@ -126,29 +121,5 @@ public class CategoryItemsFragment extends Fragment {
             }
         }
         foodAdapter.notifyDataSetChanged();
-    }
-
-    private void setupCategories() {
-        String[] categories = {"피자", "치킨", "디저트", "음료", "분식", "일식", "중식", "한식"};
-        for (final String category : categories) {
-            TextView textView = new TextView(getContext());
-            textView.setText(category);
-            textView.setPadding(16, 8, 16, 8);
-            textView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    openCategoryFragment(category);
-                }
-            });
-            categoryLinearLayout.addView(textView);
-        }
-    }
-
-    private void openCategoryFragment(String category) {
-        Fragment fragment = CategoryItemsFragment.newInstance(category);
-        getParentFragmentManager().beginTransaction()
-                .replace(R.id.main_frame, fragment)
-                .addToBackStack(null)
-                .commit();
     }
 }

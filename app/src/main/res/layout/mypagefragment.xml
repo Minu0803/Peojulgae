@@ -26,75 +26,75 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Peojulgae"
                     android:layout_gravity="end"
-                    android:padding="16dp" />
+                    android:padding="16dp"
+                    android:text="Peojulgae" />
             </FrameLayout>
 
             <ImageView
                 android:id="@+id/background"
                 android:layout_width="300dp"
                 android:layout_height="200dp"
-                android:src="@drawable/file"
                 android:layout_gravity="center"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/file" />
 
             <TextView
                 android:id="@+id/login_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
                 android:paddingBottom="24dp"
                 android:text="로그인"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_marginBottom="16dp" />
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/email_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:drawableStart="@drawable/drawble_resize_id"
-                android:hint="이메일"
-                android:layout_marginBottom="16dp" />
+                android:hint="이메일" />
 
             <EditText
                 android:id="@+id/password_edittext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="비밀번호"
+                android:layout_marginBottom="16dp"
                 android:drawableLeft="@drawable/drawble_resize"
-                android:inputType="textPassword"
-                android:layout_marginBottom="16dp" />
+                android:hint="비밀번호"
+                android:inputType="textPassword" />
 
             <Button
                 android:id="@+id/login_Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="로그인"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:text="로그인" />
 
             <CheckBox
                 android:id="@+id/autoLogin_CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="자동 로그인"
+                android:layout_marginBottom="16dp"
                 android:paddingTop="16dp"
-                android:layout_marginBottom="16dp" />
+                android:text="자동 로그인" />
 
             <Button
                 android:id="@+id/register_Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="회원가입"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:text="회원가입" />
 
             <Button
                 android:id="@+id/forgot_PasswordButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Forgot Password"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                android:text="Forgot Password" />
 
         </LinearLayout>
 
@@ -116,17 +116,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp">
 
-
                     <TextView
-                        android:id="@+id/mypage_text"
+                        android:id="@+id/mypage_text_buyer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:text="마이페이지"
                         android:textSize="23dp"
                         android:textStyle="bold" />
-
-
                 </RelativeLayout>
 
                 <ImageView
@@ -152,7 +149,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
-
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -200,27 +196,155 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/my_pay"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="결제" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="찜한 목록" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="리뷰" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 판매자 레이아웃 -->
+        <LinearLayout
+            android:id="@+id/seller_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp">
+
+                    <TextView
+                        android:id="@+id/mypage_text_seller"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="마이페이지"
+                        android:textSize="23dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/profile_sellerImageView1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/profile" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="32dp"
+                                android:orientation="horizontal">
+
+                                <ImageButton
+                                    android:id="@+id/add"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:scaleType="fitCenter"
+                                    app:srcCompat="@drawable/add" />
+
+                                <ImageButton
+                                    android:id="@+id/edit"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:scaleType="fitCenter"
+                                    app:srcCompat="@drawable/change" />
+
+                                <ImageButton
+                                    android:id="@+id/seller_review"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginEnd="16dp"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:scaleType="fitCenter"
+                                    app:srcCompat="@drawable/review" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/my_pay_seller"
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
                                     android:layout_marginEnd="16dp"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="결제 내역" />
+                                    android:text="상품 등록" />
 
                                 <TextView
-                                    android:id="@+id/my_choice"
+                                    android:id="@+id/my_choice_seller"
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
                                     android:layout_marginEnd="16dp"
                                     android:layout_weight="1"
                                     android:gravity="center"
-                                    android:text="나의 찜" />
+                                    android:text="수정,삭제" />
 
                                 <TextView
-                                    android:id="@+id/my_review"
+                                    android:id="@+id/my_review_seller"
                                     android:layout_width="70dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="16dp"
@@ -232,7 +356,7 @@
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/peojulgae"
+                                android:id="@+id/peojulgae1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -267,8 +391,8 @@
                             android:gravity="center"
                             android:orientation="horizontal">
 
-                            <TextView
-                                android:id="@+id/coupon"
+                            <Button
+                                android:id="@+id/restaurant"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -278,11 +402,11 @@
                                 android:gravity="center_vertical"
                                 android:inputType="text"
                                 android:paddingStart="16dp"
-                                android:text="쿠폰함"
+                                android:text="음식점 등록"
                                 android:textSize="15dp" />
 
-                            <TextView
-                                android:id="@+id/point"
+                            <Button
+                                android:id="@+id/mart"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -292,14 +416,14 @@
                                 android:gravity="center_vertical"
                                 android:inputType="text"
                                 android:paddingStart="16dp"
-                                android:text="포인트"
+                                android:text="마트 등록"
                                 android:textSize="15dp" />
                         </LinearLayout>
                     </FrameLayout>
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/payment"
+                    android:id="@+id/payment1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
@@ -308,11 +432,11 @@
                     android:gravity="center_vertical"
                     android:inputType="text"
                     android:paddingStart="24dp"
-                    android:text="결제 수단 관리"
+                    android:text="추가 요소 생각"
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/member_info"
+                    android:id="@+id/member_info1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
@@ -321,18 +445,18 @@
                     android:gravity="center_vertical"
                     android:inputType="text"
                     android:paddingStart="24dp"
-                    android:text="회원 정보 관리"
+                    android:text="추가 요소 생각"
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/textView71"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="28dp"
                     android:drawablePadding="10dp"
                     android:paddingStart="24dp"
                     android:gravity="center_vertical"
-                    android:text="주문 내역 관리"
+                    android:text="추가 요소 생각"
                     android:textSize="15dp"/>
 
                 <LinearLayout
@@ -344,7 +468,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/textView16"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -353,7 +477,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView2"
+                        android:id="@+id/textView21"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -362,7 +486,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView3"
+                        android:id="@+id/textView31"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -372,52 +496,16 @@
 
                 </LinearLayout>
 
-
-
-
             </LinearLayout>
 
         </LinearLayout>
-
-        <!-- 판매자 레이아웃 -->
-        <LinearLayout
-            android:id="@+id/seller_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="판매자 마이페이지"
-                android:textSize="24sp" />
-
-            <!-- 판매자 마이페이지 레이아웃 만들었으면 여기 아래에다가 넣어주세요 -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="판매한 상품 목록"
-                android:textSize="18sp"
-                android:paddingTop="16dp"/>
-
-            <ListView
-                android:id="@+id/sold_items_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <!-- 추가 판매자 UI 요소 요기 위에 -->
-
-        </LinearLayout>
-
-        <!-- 로그아웃 버튼 -->
 
         <Button
             android:id="@+id/logout_Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="로그아웃"
             android:visibility="gone" />
     </LinearLayout>
-
 </ScrollView>

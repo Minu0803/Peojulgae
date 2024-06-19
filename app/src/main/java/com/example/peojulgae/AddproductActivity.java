@@ -13,17 +13,20 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,6 +35,7 @@ import java.util.Map;
 public class AddproductActivity extends AppCompatActivity {
 
     private static final int SELECT_PHOTOS_REQUEST_CODE = 1;
+    private static final int SELECT_MAIN_IMAGE_REQUEST_CODE = 2;
     private static final String TAG = "AddproductActivity";
 
     private EditText foodName, foodDescription, foodPrice;
@@ -39,9 +43,9 @@ public class AddproductActivity extends AppCompatActivity {
     private Button selectPhotosButton, registerFoodButton, selectMainImageButton;
     private SeekBar discountSeekBar, quantitySeekBar;
     private CheckBox categoryPizza, categoryChicken, categoryDessert, categoryDrink, categorySnack, categoryJapanese, categoryChinese, categoryKorean;
-    private FirebaseFirestore db;
     private FirebaseAuth auth;
     private FirebaseStorage storage;
+    private DatabaseReference db;
     private List<Uri> photoUris;
     private int discount = 0;
     private int quantity = 1;
@@ -73,9 +77,9 @@ public class AddproductActivity extends AppCompatActivity {
         categoryChinese = findViewById(R.id.categoryChinese);
         categoryKorean = findViewById(R.id.categoryKorean);
 
-        db = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         storage = FirebaseStorage.getInstance();
+        db = FirebaseDatabase.getInstance().getReference("Foods");
         photoUris = new ArrayList<>();
 
         selectPhotosButton.setOnClickListener(new View.OnClickListener() {
@@ -138,7 +142,7 @@ public class AddproductActivity extends AppCompatActivity {
     private void selectMainImage() {
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("image/*");
-        startActivityForResult(Intent.createChooser(intent, "메인 이미지 선택"), SELECT_PHOTOS_REQUEST_CODE);
+        startActivityForResult(Intent.createChooser(intent, "메인 이미지 선택"), SELECT_MAIN_IMAGE_REQUEST_CODE);
     }
 
     @Override
@@ -155,6 +159,9 @@ public class AddproductActivity extends AppCompatActivity {
                 photoUris.add(data.getData());
             }
             selectedPhotosText.setText(photoUris.size() + "장의 사진 선택됨");
+        } else if (requestCode == SELECT_MAIN_IMAGE_REQUEST_CODE && resultCode == Activity.RESULT_OK && data != null) {
+            mainImageUri = data.getData();
+            selectMainImageButton.setText("메인 이미지 선택됨");
         }
     }
 
@@ -171,7 +178,7 @@ public class AddproductActivity extends AppCompatActivity {
         }
 
         String userId = auth.getCurrentUser().getUid();
-        final DocumentReference foodRef = db.collection("Foods").document();
+        final DatabaseReference foodRef = db.push();
 
         final Map<String, Object> food = new HashMap<>();
         food.put("name", name);
@@ -194,7 +201,7 @@ public class AddproductActivity extends AppCompatActivity {
 
         if (!photoUris.isEmpty()) {
             final List<String> photoUrls = new ArrayList<>();
-            StorageReference storageRef = storage.getReference().child("food_photos").child(foodRef.getId());
+            StorageReference storageRef = storage.getReference().child("food_photos").child(foodRef.getKey());
 
             for (Uri uri : photoUris) {
                 final StorageReference photoRef = storageRef.child(uri.getLastPathSegment());
@@ -252,7 +259,7 @@ public class AddproductActivity extends AppCompatActivity {
             }
         } else {
             if (mainImageUri != null) {
-                StorageReference storageRef = storage.getReference().child("food_photos").child(foodRef.getId());
+                StorageReference storageRef = storage.getReference().child("food_photos").child(foodRef.getKey());
                 final StorageReference mainImageRef = storageRef.child("main_image");
                 mainImageRef.putFile(mainImageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -282,11 +289,11 @@ public class AddproductActivity extends AppCompatActivity {
         }
     }
 
-    private void saveFoodToDatabase(DocumentReference foodRef, Map<String, Object> food) {
-        foodRef.set(food)
+    private void saveFoodToDatabase(DatabaseReference foodRef, Map<String, Object> food) {
+        foodRef.setValue(food)
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(AddproductActivity.this, "음식 등록 완료", Toast.LENGTH_SHORT).show();
-                    Log.d(TAG, "음식 등록 완료: " + foodRef.getId());
+                    Log.d(TAG, "음식 등록 완료: " + foodRef.getKey());
                     finish();
                 })
                 .addOnFailureListener(e -> {

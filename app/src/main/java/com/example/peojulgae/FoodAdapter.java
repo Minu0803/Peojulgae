@@ -1,21 +1,24 @@
 package com.example.peojulgae;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.bumptech.glide.Glide;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
 
     private List<Food> foodList;
+    private Context context;
 
-    public FoodAdapter(List<Food> foodList) {
+    public FoodAdapter(List<Food> foodList, Context context) {
         this.foodList = foodList;
+        this.context = context;
     }
 
     @NonNull
@@ -28,14 +31,13 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
         Food food = foodList.get(position);
-        holder.foodNameTextView.setText(food.getName());
-        holder.foodPriceTextView.setText(food.getPrice());
-        holder.foodDiscountTextView.setText(food.getDiscount() + "%");
+        holder.foodName.setText(food.getName());
+        holder.foodDescription.setText(food.getDescription());
+        holder.foodPrice.setText("가격: " + food.getPrice());
+        holder.foodDiscount.setText("할인율: " + food.getDiscount() + "%");
+        holder.foodQuantity.setText("수량: " + food.getQuantity());  // 수량 표시
 
-        // 이미지 로드 (Glide 사용)
-        Glide.with(holder.itemView.getContext())
-                .load(food.getMainImageUrl()) // 메인 이미지 URL 로드
-                .into(holder.foodImageView);
+        Glide.with(context).load(food.getMainImageUrl()).into(holder.foodImage);
     }
 
     @Override
@@ -44,17 +46,17 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     }
 
     public static class FoodViewHolder extends RecyclerView.ViewHolder {
-        public TextView foodNameTextView;
-        public TextView foodPriceTextView;
-        public TextView foodDiscountTextView;
-        public ImageView foodImageView;
+        TextView foodName, foodPrice, foodDescription, foodDiscount, foodQuantity;
+        ImageView foodImage;
 
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
-            foodNameTextView = itemView.findViewById(R.id.foodNameTextView);
-            foodPriceTextView = itemView.findViewById(R.id.foodPriceTextView);
-            foodDiscountTextView = itemView.findViewById(R.id.foodDiscountTextView);
-            foodImageView = itemView.findViewById(R.id.foodImageView);
+            foodName = itemView.findViewById(R.id.food_name);
+            foodPrice = itemView.findViewById(R.id.food_price);
+            foodDescription = itemView.findViewById(R.id.food_description);
+            foodDiscount = itemView.findViewById(R.id.food_discount);
+            foodQuantity = itemView.findViewById(R.id.food_quantity);
+            foodImage = itemView.findViewById(R.id.food_image);
         }
     }
 }
