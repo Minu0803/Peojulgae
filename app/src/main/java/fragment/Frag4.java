@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,7 @@ import androidx.fragment.app.Fragment;
 import com.example.peojulgae.AddmartActivity;
 import com.example.peojulgae.AddproductActivity;
 import com.example.peojulgae.AddrestaurantActivity;
+import com.example.peojulgae.CancelPayActivity;
 import com.example.peojulgae.EditproductActivity;
 import com.example.peojulgae.R;
 import com.example.peojulgae.RegisterActivity;
@@ -70,6 +72,19 @@ public class Frag4 extends Fragment {
         loginLayout = view.findViewById(R.id.login_layout);
         buyerLayout = view.findViewById(R.id.buyer_layout);
         sellerLayout = view.findViewById(R.id.seller_layout);
+
+        // TextView 정의 및 클릭 리스너 설정
+        TextView paymentTextView = view.findViewById(R.id.OrderManagement);
+        paymentTextView.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), CancelPayActivity.class);
+            startActivity(intent);
+        });
+
+        TextView paymentTextView2 = view.findViewById(R.id.OrderManagement2);
+        paymentTextView2.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), CancelPayActivity.class);
+            startActivity(intent);
+        });
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         // 사용자가 로그인이 안되어있을때 로그인 화면 보여줌
