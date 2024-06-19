@@ -83,7 +83,7 @@
                             android:textSize="16dp"
                             android:textStyle="bold" />
 
-                        <TextView
+                        <EditText
                             android:id="@+id/have_text02"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
                             android:textSize="16dp"
                             android:textStyle="bold" />
 
-                        <TextView
+                        <EditText
                             android:id="@+id/have_text05"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -206,7 +206,7 @@
                             android:textSize="16dp"
                             android:textStyle="bold" />
 
-                        <TextView
+                        <EditText
                             android:id="@+id/have_text08"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -627,7 +627,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="14dp"
                 android:backgroundTint="@color/darkgrey"
-                android:text="결제 및 포장하기" />
+                android:text="결제 및 먹고가기" />
 
         </LinearLayout>
     </ScrollView>
